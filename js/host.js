@@ -116,7 +116,19 @@ $("btn-start").onclick = guard(() => updateGame(sala, { status: "playing", pause
 $("btn-pause").onclick = guard(() => (derived.tl && derived.tl.paused ? resume() : pause()));
 $("btn-next").onclick = guard(next);
 $("btn-new-round").onclick = guard(() => newRound(room.game.config));
-$("btn-end").onclick = guard(endGame);
+// Está al lado de Pausa: pide un segundo toque para no terminar la partida sin querer
+let endTimer = null;
+$("btn-end").onclick = guard(() => {
+  if (!endTimer) {
+    $("btn-end").textContent = "¿Seguro? Tocá de nuevo";
+    endTimer = setTimeout(() => { endTimer = null; $("btn-end").textContent = "⏹ Terminar partida"; }, 3000);
+    return;
+  }
+  clearTimeout(endTimer);
+  endTimer = null;
+  $("btn-end").textContent = "⏹ Terminar partida";
+  return endGame();
+});
 $("btn-setup").onclick = () => { manualSetup = true; render(); };
 
 $("players").onclick = (e) => {
@@ -280,6 +292,7 @@ const render = () => {
   $("btn-start").disabled = !players.length;
   $("btn-pause").hidden = !playing;
   $("btn-next").hidden = !playing;
+  $("btn-end").hidden = !playing;
   if (!playing) $("countdown-bar").style.width = "0";
 
   if (status === "ended") {
@@ -301,7 +314,8 @@ const renderClock = () => {
   $("now-count").textContent = `Tema ${Math.max(1, tl.playedCount)} de ${tl.total}`;
   $("btn-pause").textContent = tl.paused ? "▶ Seguir" : "⏸ Pausa";
   $("btn-next").disabled = tl.phase === "preparing";
-  $("btn-next").textContent = tl.last && tl.phase === "waiting" ? "⏹ Terminar partida" : "⏭ Siguiente tema";
+  // Después del último tema ya no hay siguiente: queda solo Terminar
+  $("btn-next").hidden = tl.last && tl.phase === "waiting";
 
   let label;
   if (tl.paused && room.game.autoPaused) label = online ? "🔄 Cargando el tema… sigue solo en un momento" : "📡 Sin internet — la partida sigue sola cuando vuelva";
