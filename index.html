@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1033">
+  <title>Bingo Musical</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="player">
+  <header class="top">
+    <h1>🎵 Bingo Musical</h1>
+    <p class="sub">Rock nacional &amp; cumbia</p>
+  </header>
+
+  <main class="landing">
+    <form class="panel" id="join-form">
+      <h2>Entrar a una partida</h2>
+      <p class="hint">Pedile el código de la sala a quien organiza.</p>
+      <input id="code" class="text-input code-input" maxlength="4" autocomplete="off" autocapitalize="characters" placeholder="CÓDIGO" required>
+      <button class="btn primary big" type="submit">Entrar</button>
+      <p id="join-error" class="message bad" hidden></p>
+    </form>
+
+    <div class="panel center">
+      <h2>¿Organizás vos?</h2>
+      <p class="hint">Creá una sala y pasale el link a tus amigos. Vos manejás cuándo arranca, pausás y seguís.</p>
+      <button id="btn-create" class="btn big">🎤 Crear partida</button>
+      <p id="create-error" class="message bad" hidden></p>
+    </div>
+  </main>
+
+  <script type="module">
+    import { configured, signIn, createRoom, roomExists } from "./js/net.js";
+
+    const $ = (id) => document.getElementById(id);
+    const fail = (id, text) => { $(id).textContent = text; $(id).hidden = false; };
+    if (!configured) fail("create-error", "Falta configurar Firebase (js/firebase-config.js).");
+
+    $("join-form").onsubmit = async (e) => {
+      e.preventDefault();
+      const code = $("code").value.toUpperCase().trim();
+      try {
+        await signIn();
+        if (!(await roomExists(code))) return fail("join-error", "No existe esa sala. Revisá el código.");
+        location.href = `jugar.html?sala=${code}`;
+      } catch (err) {
+        fail("join-error", `No se pudo conectar: ${err.message}`);
+      }
+    };
+
+    $("btn-create").onclick = async () => {
+      $("btn-create").disabled = true;
+      try {
+        const code = await createRoom(await signIn());
+        location.href = `host.html?sala=${code}`;
+      } catch (err) {
+        fail("create-error", `No se pudo crear la sala: ${err.message}`);
+        $("btn-create").disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>

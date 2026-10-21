@@ -1,0 +1,13 @@
+{
+  "name": "bingo-musical",
+  "version": "2.0.0",
+  "description": "Bingo musical online de rock nacional y cumbia (GitHub Pages + Firebase)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "catalogo": "node tools/build-catalog.js",
+    "dev": "node tools/dev-server.js",
+    "test": "node tools/test-logic.js"
+  },
+  "license": "MIT"
+}

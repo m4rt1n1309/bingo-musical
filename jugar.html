@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1033">
+  <title>Bingo Musical</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="player">
+  <header class="top compact">
+    <h1>🎵 Bingo Musical</h1>
+    <p class="sub" id="me-name"></p>
+  </header>
+
+  <main>
+    <!-- Sala inexistente -->
+    <section id="screen-missing" class="screen">
+      <div class="panel center">
+        <h2 id="missing-title">No encontramos esa sala</h2>
+        <p class="hint" id="missing-text">Puede que el código esté mal o que la partida ya haya terminado.</p>
+        <a class="btn primary" href="./">Volver al inicio</a>
+      </div>
+    </section>
+
+    <!-- Nombre -->
+    <section id="screen-join" class="screen">
+      <form class="panel" id="join-form">
+        <h2>¿Cómo te llamás?</h2>
+        <input id="name" class="text-input" maxlength="20" autocomplete="nickname" placeholder="Tu nombre" required>
+        <button class="btn primary big" type="submit">Entrar</button>
+        <p id="join-error" class="message bad" hidden></p>
+      </form>
+    </section>
+
+    <!-- Esperando que el anfitrión prepare -->
+    <section id="screen-wait" class="screen">
+      <div class="panel center">
+        <h2>⏳ Esperando al anfitrión</h2>
+        <p class="hint">Todavía no se armó la partida. Esta pantalla se actualiza sola.</p>
+      </div>
+    </section>
+
+    <!-- Juego -->
+    <section id="screen-game" class="screen">
+      <div class="status-bar" id="status-bar">
+        <div class="status-row">
+          <span id="status-label">Esperando que arranque…</span>
+          <span id="status-count" class="hint"></span>
+        </div>
+        <div class="countdown"><div id="countdown-bar"></div></div>
+        <div id="status-reveal" class="now-reveal"></div>
+      </div>
+
+      <div id="card" class="card"></div>
+
+      <div id="lobby-tools" class="row-btns">
+        <button id="btn-new-card" class="btn">🔀 Cambiar cartón</button>
+      </div>
+
+      <div class="claims" id="claims">
+        <button id="btn-line" class="btn claim">¡LÍNEA!</button>
+        <button id="btn-bingo" class="btn claim gold">¡BINGO!</button>
+      </div>
+      <div id="message" class="message" hidden></div>
+
+      <div class="panel feed-panel">
+        <ul id="feed" class="feed"></ul>
+      </div>
+      <p class="hint center">Subí el volumen y dejá esta pantalla abierta: si el celu se bloquea, se corta el sonido.</p>
+    </section>
+
+    <!-- Fin -->
+    <section id="screen-end" class="screen">
+      <div class="panel center">
+        <h2 id="end-title"></h2>
+        <p id="end-text" class="hint"></p>
+        <h3>Temas que sonaron</h3>
+        <p class="hint">En amarillo, los que tenías en tu cartón.</p>
+        <ol id="end-history" class="end-history"></ol>
+        <p class="hint">Si el anfitrión arranca otra ronda, te llega un cartón nuevo acá.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Los celulares solo dejan sonar audio después de un toque -->
+  <div id="sound-gate" class="sound-gate" hidden>
+    <button id="btn-sound" class="btn primary big">🔊 Tocá para activar el sonido</button>
+    <p class="hint">Los temas suenan en tu celular. Subí el volumen.</p>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="js/player.js"></script>
+</body>
+</html>
