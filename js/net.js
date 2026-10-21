@@ -2,7 +2,7 @@
 //
 // rooms/{código}/
 //   host      uid del anfitrión (solo él puede tocar `game`, sacar jugadores y dar veredictos)
-//   game      { status, roundId, config, pool, order, base, pausedAt, endedAt }
+//   game      { status, roundId, config, pool, order, base, pausedAt, autoPaused, endedAt }
 //   players/{uid}  { name, joinedAt, roundId, card }
 //   claims/{id}    { uid, name, type, marked, roundId, at, verdict? }
 
@@ -23,6 +23,15 @@ const db = app && getDatabase(app);
 let offset = 0;
 if (db) onValue(ref(db, ".info/serverTimeOffset"), (snap) => { offset = snap.val() || 0; });
 export const serverNow = () => Date.now() + offset;
+
+// Avisa cuando este dispositivo pierde o recupera la conexión (con Firebase o con internet en general)
+export const watchConnection = (cb) => {
+  let fb = false;
+  const emit = () => cb(fb && navigator.onLine);
+  if (db) onValue(ref(db, ".info/connected"), (snap) => { fb = !!snap.val(); emit(); });
+  addEventListener("online", emit);
+  addEventListener("offline", emit);
+};
 
 export const signIn = () =>
   new Promise((resolve, reject) => {

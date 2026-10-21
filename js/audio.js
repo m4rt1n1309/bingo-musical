@@ -15,12 +15,15 @@ const silentWav = (() => {
   return `data:audio/wav;base64,${btoa(bin)}`;
 })();
 
+const STUCK_MS = 5000;
+
 export const createSyncAudio = (serverNow) => {
   const el = new Audio();
   el.preload = "auto";
   let unlocked = false;
   let url = null;
   let startTimer = null;
+  let retryTimer = null;
   let wanted = null; // { url, startAt } o null si no tiene que sonar nada
 
   const expectedOffset = () => (serverNow() - wanted.startAt) / 1000;
@@ -50,12 +53,23 @@ export const createSyncAudio = (serverNow) => {
       return;
     }
     if (url !== wanted.url) {
+      clearTimeout(retryTimer);
       url = wanted.url;
       el.src = url;
       el.load();
     }
     startNow();
   };
+
+  // Si el tema no cargó (por ejemplo, se cortó internet), lo volvemos a pedir en un rato
+  el.addEventListener("error", () => {
+    if (!wanted || url !== wanted.url) return;
+    clearTimeout(retryTimer);
+    retryTimer = setTimeout(() => { url = null; apply(); }, 3000);
+  });
+
+  // Hasta dónde se escuchó el tema actual y cuándo se lo vio sonando bien por última vez (hora del servidor)
+  let heard = null;
 
   // Corrige si el audio se desfasó (por ejemplo si tardó en cargar)
   setInterval(() => {
@@ -86,6 +100,27 @@ export const createSyncAudio = (serverNow) => {
     restart() {
       url = null;
       apply();
+    },
+    // Si el tema que debería sonar lleva unos segundos sin sonar (no cargó o se trabó),
+    // devuelve hasta qué momento se llegó a escuchar; si no, null
+    stuckAt() {
+      if (!unlocked || !wanted) return null;
+      const now = serverNow();
+      if (now < wanted.startAt) return null;
+      if (!heard || heard.startAt !== wanted.startAt) heard = { startAt: wanted.startAt, pos: wanted.startAt, okAt: wanted.startAt };
+      if (url === wanted.url && (el.ended || (!el.paused && el.readyState >= 3))) {
+        heard.pos = wanted.startAt + el.currentTime * 1000;
+        heard.okAt = now;
+      }
+      return now - heard.okAt > STUCK_MS ? heard.pos : null;
+    },
+    // Prueba si el tema se puede bajar (y de paso queda en la caché del navegador)
+    probe(src) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 8000);
+      return fetch(src, { mode: "no-cors", signal: ctrl.signal })
+        .then((res) => res.blob())
+        .finally(() => clearTimeout(timer));
     },
   };
 };

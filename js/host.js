@@ -1,7 +1,7 @@
 import { CATALOG } from "./catalog.js";
 import { ROWS, LEAD_MS, shuffle, timeline, resolveClaims } from "./logic.js";
 import {
-  configured, signIn, serverNow, newId, watchRoom, setGame, updateGame, removePlayer, setVerdict, clearClaims,
+  configured, signIn, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims,
 } from "./net.js";
 import { createSyncAudio } from "./audio.js";
 import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed } from "./ui.js";
@@ -88,24 +88,26 @@ $("btn-prepare").onclick = guard(async () => {
 
 // ---------- Controles ----------
 
-const pause = () => {
+// at: desde cuándo vale la pausa (puede ser un poco antes de ahora, si el tema se trabó)
+// auto: la puso el juego solo por un problema de conexión, y se saca sola cuando se arregla
+const pause = (at = serverNow(), auto = false) => {
   const tl = derived.tl;
   if (!tl || tl.paused) return;
-  return updateGame(sala, { pausedAt: serverNow() });
+  return updateGame(sala, { pausedAt: Math.min(at, serverNow()), autoPaused: auto || null });
 };
 
 const resume = () => {
   const game = room.game;
   if (game.pausedAt == null) return;
   // Corremos el punto de partida lo que duró la pausa, así el tema sigue desde donde quedó
-  return updateGame(sala, { pausedAt: null, base: { ...game.base, start: game.base.start + (serverNow() - game.pausedAt) } });
+  return updateGame(sala, { pausedAt: null, autoPaused: null, base: { ...game.base, start: game.base.start + (serverNow() - game.pausedAt) } });
 };
 
 const next = () => {
   const tl = derived.tl;
   if (!tl || tl.phase === "preparing") return;
   if (tl.playedCount >= tl.total) return endGame();
-  return updateGame(sala, { pausedAt: null, base: { index: tl.playedCount, start: serverNow() + LEAD_MS } });
+  return updateGame(sala, { pausedAt: null, autoPaused: null, base: { index: tl.playedCount, start: serverNow() + LEAD_MS } });
 };
 
 const endGame = () => updateGame(sala, { status: "ended", endedAt: serverNow() });
@@ -147,6 +149,51 @@ const judge = () => {
     if (r.verdict.ok && r.type === "line" && derived.tl && !derived.tl.paused) pause();
   }
   if (derived.bingoWinner && game.status === "playing") updateGame(sala, { status: "ended", endedAt: derived.bingoWinner.at });
+};
+
+// ---------- Cortes de internet: pausa sola y sigue sola, sin perderse temas ----------
+
+let online = navigator.onLine;
+watchConnection((ok) => { online = ok; });
+let recovering = false;
+let failed = { url: null, count: 0 };
+
+const listening = () => $("opt-listen").checked && audio.unlocked;
+
+// Saca de la lista un tema que no carga aunque haya internet, sin contarlo como sonado
+const skipSong = (tl) => {
+  const order = room.game.order.filter((_, i) => i !== tl.index);
+  return updateGame(sala, { order, pausedAt: null, autoPaused: null, base: { index: tl.index, start: serverNow() + LEAD_MS } });
+};
+
+const watchdog = () => {
+  const tl = derived.tl;
+  if (!tl) return;
+  const game = room.game;
+  const stuck = listening() ? audio.stuckAt() : null;
+
+  if (!tl.paused) {
+    if (!online || stuck != null) guard(() => pause(stuck ?? serverNow(), true))();
+    return;
+  }
+
+  // Pausada por un corte: probamos si ya volvió todo para seguir
+  if (!game.autoPaused || recovering || !online) return;
+  recovering = true;
+  const song = CATALOG[game.order[tl.index]];
+  (listening() ? audio.probe(song.url) : Promise.resolve())
+    .then(() => {
+      failed = { url: null, count: 0 };
+      return resume();
+    }, () => {
+      failed = failed.url === song.url ? { url: song.url, count: failed.count + 1 } : { url: song.url, count: 1 };
+      if (failed.count < 3) return;
+      failed = { url: null, count: 0 };
+      showBanner(`No se pudo cargar "${song.title}", se saltea`, "bad");
+      return skipSong(tl);
+    })
+    .catch((err) => showError(`No se pudo: ${err.message}`))
+    .finally(() => setTimeout(() => { recovering = false; }, 3000));
 };
 
 // ---------- Estado ----------
@@ -257,7 +304,8 @@ const renderClock = () => {
   $("btn-next").textContent = tl.last && tl.phase === "waiting" ? "⏹ Terminar partida" : "⏭ Siguiente tema";
 
   let label;
-  if (tl.paused) label = "⏸ En pausa";
+  if (tl.paused && room.game.autoPaused) label = online ? "🔄 Cargando el tema… sigue solo en un momento" : "📡 Sin internet — la partida sigue sola cuando vuelva";
+  else if (tl.paused) label = "⏸ En pausa";
   else if (tl.phase === "preparing") label = "Preparados…";
   else if (tl.phase === "playing") label = "🎶 Sonando…";
   else if (tl.last) label = "Ese fue el último tema. ¿Alguien cantó bingo?";
@@ -276,6 +324,7 @@ setInterval(() => {
   if (!room) return;
   derive();
   audio.update($("opt-listen").checked ? wantedSong(room.game, derived.tl, derived.status === "ended") : null);
+  watchdog();
   renderClock();
 }, 200);
 

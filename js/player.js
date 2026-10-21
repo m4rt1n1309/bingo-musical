@@ -1,6 +1,6 @@
 import { CATALOG } from "./catalog.js";
 import { ROWS, shuffle, songKey, timeline, playedAt, checkClaim, resolveClaims, verdictMessage } from "./logic.js";
-import { configured, signIn, serverNow, watchRoom, roomExists, savePlayer, updatePlayer, pushClaim, serverTimestamp } from "./net.js";
+import { configured, signIn, serverNow, watchRoom, watchConnection, roomExists, savePlayer, updatePlayer, pushClaim, serverTimestamp } from "./net.js";
 import { createSyncAudio } from "./audio.js";
 import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed } from "./ui.js";
 
@@ -17,6 +17,8 @@ let cardRendered = null; // para no redibujar el cartón si no cambió
 let wantsToJoin = !!store.get(NAME_KEY); // ya puso su nombre en esta sala
 let joined = false;                       // su jugador existe en Firebase
 const audio = createSyncAudio(serverNow);
+let online = navigator.onLine;
+watchConnection((ok) => { online = ok; if (derived) renderStatus(); });
 
 const me = () => room && room.players && room.players[uid];
 const marksKey = () => `bingo-musical-marks-${sala}-${room.game.roundId}`;
@@ -277,7 +279,9 @@ const renderStatus = () => {
     $("status-count").textContent = "";
   } else if (tl) {
     $("status-count").textContent = `Tema ${Math.max(1, tl.playedCount)}/${tl.total}`;
-    if (tl.paused) $("status-label").textContent = "⏸ En pausa";
+    if (!online) $("status-label").textContent = "📡 Sin internet en tu celu… esperando que vuelva";
+    else if (tl.paused && room.game.autoPaused) $("status-label").textContent = "⏸ En pausa: se cortó internet, sigue sola en un momento";
+    else if (tl.paused) $("status-label").textContent = "⏸ En pausa";
     else if (tl.phase === "preparing") $("status-label").textContent = "🎧 Preparados…";
     else if (tl.phase === "playing") $("status-label").textContent = `🎶 Sonando… ${Math.ceil(tl.remainingMs / 1000)}s`;
     else if (tl.last) $("status-label").textContent = "Fue el último tema. ¿Cantás bingo?";
