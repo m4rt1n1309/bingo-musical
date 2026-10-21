@@ -23,11 +23,13 @@ const pickBest = (song, results) => {
   let bestScore = 0;
   for (const r of results) {
     if (!r.previewUrl) continue;
-    const artist = norm(r.artistName || "");
+    // "Los Ángeles Azules & Natalia Lafourcade" cuenta como Los Ángeles Azules,
+    // pero "Rodrigo de la Cadena" no cuenta como Rodrigo
+    const artists = (r.artistName || "").split(/\s*(?:&|,|\bfeat\.?|\bft\.?|\sx\s)\s*/i).map(norm);
     const title = norm(r.trackName || "");
     let score = 0;
-    if (artist === wantArtist) score += 4;
-    else if (artist.includes(wantArtist) || wantArtist.includes(artist)) score += 3;
+    if (artists[0] === wantArtist) score += 4;
+    else if (artists.includes(wantArtist)) score += 3;
     if (title === wantTitle) score += 4;
     else if (title.startsWith(wantTitle)) score += 3;
     else if (title.includes(wantTitle)) score += 2;
