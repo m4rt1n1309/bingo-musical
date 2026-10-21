@@ -226,7 +226,7 @@ export const CATALOG = [
   "genre": "rock",
   "artist": "Los Fabulosos Cadillacs",
   "title": "El Satánico Dr. Cadillac",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/be/b3/73/beb373b0-0575-b561-580c-4240a711c6f7/mzaf_3594465979697784500.plus.aac.p.m4a"
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/c0/d1/d1c0d102-6ceb-261c-36ee-896235fc56af/mzaf_11117116789152985561.plus.aac.p.m4a"
  },
  {
   "genre": "rock",
