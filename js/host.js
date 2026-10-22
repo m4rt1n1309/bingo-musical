@@ -85,9 +85,21 @@ $("btn-prepare").onclick = guard(async () => {
     duration: Number($("opt-duration").value),
     pause: Number($("opt-pause").value),
     cols: Number($("opt-size").value),
-    reveal: $("opt-reveal").checked,
+    reveal: $("opt-reveal").checked && !$("opt-reveal").disabled,
   });
 });
+
+// Con 3 segundos entre temas no da tiempo a leer cuál era: sin modo fácil
+const MIN_REVEAL_PAUSE = 5;
+const syncReveal = () => {
+  const secs = Number($("opt-pause").value);
+  const off = secs > 0 && secs < MIN_REVEAL_PAUSE;
+  $("opt-reveal").disabled = off;
+  if (off) $("opt-reveal").checked = false;
+  $("reveal-note").hidden = !off;
+};
+$("opt-pause").onchange = syncReveal;
+syncReveal();
 
 // ---------- Controles ----------
 
