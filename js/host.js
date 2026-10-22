@@ -276,7 +276,7 @@ const render = () => {
     : `<li class="hint">Nadie todavía. ¡Pasales el link!</li>`;
 
   // Novedades
-  const feed = buildFeed(room.players, derived.results);
+  const feed = buildFeed(derived.results);
   $("feed").innerHTML = feed.length
     ? feed.map((f) => `<li class="feed-${f.kind}">${escapeHtml(f.text)}</li>`).join("")
     : `<li class="hint">Acá aparecen las líneas y bingos que se canten.</li>`;

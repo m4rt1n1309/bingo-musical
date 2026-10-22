@@ -64,7 +64,9 @@
       </div>
       <div id="message" class="message" hidden></div>
 
-      <div class="panel feed-panel">
+      <div id="chat-spot"></div>
+
+      <div class="panel feed-panel" id="feed-panel" hidden>
         <ul id="feed" class="feed"></ul>
       </div>
       <p class="hint center">Subí el volumen y dejá esta pantalla abierta: si el celu se bloquea, se corta el sonido.</p>
@@ -82,15 +84,17 @@
       </div>
     </section>
 
-    <!-- Chat de la sala: se ve en la espera, en el juego y al final -->
-    <section class="panel chat" id="chat-box" hidden>
-      <h3>💬 Chat</h3>
-      <ul id="chat" class="chat-list"></ul>
-      <form id="chat-form" class="chat-form">
-        <input id="chat-input" class="text-input" autocomplete="off" enterkeyhint="send" placeholder="Escribí un mensaje…">
-        <button class="btn primary" type="submit">Enviar</button>
-      </form>
-    </section>
+    <!-- Chat de la sala: se ve en la espera, en el juego y al final. En el juego se muda a #chat-spot -->
+    <div id="chat-end">
+      <section class="panel chat" id="chat-box" hidden>
+        <h3>💬 Chat</h3>
+        <ul id="chat" class="chat-list"></ul>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-input" class="text-input" autocomplete="off" enterkeyhint="send" placeholder="Escribí un mensaje…">
+          <button class="btn primary" type="submit">Enviar</button>
+        </form>
+      </section>
+    </div>
   </main>
 
   <!-- Los celulares solo dejan sonar audio después de un toque -->

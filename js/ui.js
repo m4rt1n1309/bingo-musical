@@ -32,11 +32,9 @@ export const visibleHistory = (game, tl, ended, endAt) => {
   return game.order.slice(0, Math.max(0, count)).map((i) => songKey(CATALOG[i]));
 };
 
-/** Novedades: quién entró y qué se cantó, lo más nuevo primero. */
-export const buildFeed = (players, results) => {
-  const items = Object.values(players || {})
-    .filter((p) => typeof p.joinedAt === "number")
-    .map((p) => ({ kind: "join", text: `${p.name} se sumó al juego`, at: p.joinedAt }));
+/** Novedades: qué se cantó, lo más nuevo primero. */
+export const buildFeed = (results) => {
+  const items = [];
   for (const r of results) {
     const what = r.type === "line" ? "LÍNEA" : "¡BINGO!";
     if (r.verdict.ok) items.push({ kind: r.type === "line" ? "line" : "bingo", text: `${r.type === "line" ? "🎉" : "🏆"} ${r.name} cantó ${what}`, at: r.at, id: r.id });

@@ -200,7 +200,7 @@ const onRoom = async (data) => {
     if (seenClaims.has(r.id)) continue;
     seenClaims.add(r.id);
     if (firstSnapshot) continue;
-    const item = buildFeed({}, [r])[0];
+    const item = buildFeed([r])[0];
     if (item && r.uid !== uid) toast(item.text, item.kind);
     // Si el veredicto oficial difiere de lo que vimos localmente, mostramos el oficial
     if (r.uid === uid && p) {
@@ -253,6 +253,9 @@ const render = () => {
   if (!p) return show(wantsToJoin ? "screen-wait" : "screen-join");
   renderChat($("chat"), room.chat, uid);
   $("me-name").textContent = `Jugando como ${p.name} · Sala ${sala}`;
+  // En el juego, el chat va justo debajo del cartón y los botones, sin tener que bajar hasta el fondo
+  const chatSpot = ready && status !== "ended" ? $("chat-spot") : $("chat-end");
+  if ($("chat-box").parentNode !== chatSpot) chatSpot.append($("chat-box"));
   if (!ready) return show("screen-wait");
 
   if (status === "ended") {
@@ -275,11 +278,9 @@ const render = () => {
   $("btn-line").textContent = derived.lineWinner ? `Línea: ${derived.lineWinner.name}` : "¡LÍNEA!";
   $("card").classList.toggle("locked", lobby);
 
-  const names = Object.values(room.players || {}).map((x) => escapeHtml(x.name));
-  $("feed").innerHTML = buildFeed(room.players, derived.results)
-    .slice(0, 5)
-    .map((f) => `<li class="feed-${f.kind}">${escapeHtml(f.text)}</li>`)
-    .join("") || `<li class="hint">Jugadores: ${names.join(", ")}</li>`;
+  const feed = buildFeed(derived.results).slice(0, 5);
+  $("feed-panel").hidden = !feed.length;
+  $("feed").innerHTML = feed.map((f) => `<li class="feed-${f.kind}">${escapeHtml(f.text)}</li>`).join("");
   renderStatus();
 };
 
