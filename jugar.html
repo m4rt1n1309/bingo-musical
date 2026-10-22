@@ -81,6 +81,16 @@
         <p class="hint">Si el anfitrión arranca otra ronda, te llega un cartón nuevo acá.</p>
       </div>
     </section>
+
+    <!-- Chat de la sala: se ve en la espera, en el juego y al final -->
+    <section class="panel chat" id="chat-box" hidden>
+      <h3>💬 Chat</h3>
+      <ul id="chat" class="chat-list"></ul>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" class="text-input" autocomplete="off" enterkeyhint="send" placeholder="Escribí un mensaje…">
+        <button class="btn primary" type="submit">Enviar</button>
+      </form>
+    </section>
   </main>
 
   <!-- Los celulares solo dejan sonar audio después de un toque -->

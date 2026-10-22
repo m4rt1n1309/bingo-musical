@@ -5,6 +5,7 @@
 //   game      { status, roundId, config, pool, order, base, pausedAt, autoPaused, endedAt }
 //   players/{uid}  { name, joinedAt, roundId, card }
 //   claims/{id}    { uid, name, type, marked, roundId, at, verdict? }
+//   chat/{id}      { uid, name, text, at }
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -78,5 +79,7 @@ export const removePlayer = (code, uid) => remove(roomRef(code, `players/${uid}`
 export const pushClaim = (code, claim) => push(roomRef(code, "claims"), { ...claim, at: serverTimestamp() });
 export const setVerdict = (code, id, verdict) => set(roomRef(code, `claims/${id}/verdict`), verdict);
 export const clearClaims = (code) => remove(roomRef(code, "claims"));
+
+export const pushChat = (code, msg) => push(roomRef(code, "chat"), { ...msg, at: serverTimestamp() });
 
 export { serverTimestamp };

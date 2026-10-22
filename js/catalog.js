@@ -82,7 +82,7 @@ export const CATALOG = [
   "genre": "rock",
   "artist": "Divididos",
   "title": "El Arriero",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/dc/cb/8a/dccb8a7f-e20c-e1fd-1261-47739ba43adb/mzaf_191514470516594043.plus.aac.p.m4a"
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8b/0e/4a/8b0e4a45-48cb-dea2-8ed7-439cbea22a97/mzaf_5553388256104398722.plus.aac.p.m4a"
  },
  {
   "genre": "rock",
@@ -340,7 +340,7 @@ export const CATALOG = [
   "genre": "rock",
   "artist": "Rata Blanca",
   "title": "Mujer Amante",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/7a/f3/95/7af39579-cbcc-7fc0-c0e6-36731fb84ac8/mzaf_6559173371389507456.plus.aac.p.m4a"
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6b/aa/6e/6baa6e48-e64e-0e0f-265d-9f03697e5618/mzaf_15396628294004438153.plus.aac.p.m4a"
  },
  {
   "genre": "rock",
@@ -586,7 +586,7 @@ export const CATALOG = [
   "genre": "cumbia",
   "artist": "Gilda",
   "title": "Noches Vacías",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/b3/63/c0b36330-d98d-0a39-0cc7-0e7322ac3b4a/mzaf_12870609542048161549.plus.aac.p.m4a"
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/96/e6/c8/96e6c881-d88b-d887-a3aa-1b1edb9c6015/mzaf_2725575565550130446.plus.aac.p.m4a"
  },
  {
   "genre": "cumbia",

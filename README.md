@@ -21,6 +21,7 @@ No tiene servidor propio:
 3. El anfitrión toca **Empezar**. Los temas suenan solos, uno detrás de otro.
 4. Cuando alguien canta una línea válida, la música se pausa para todos y el anfitrión decide cuándo seguir.
 5. **Nueva ronda** reparte cartones nuevos sin que nadie tenga que volver a entrar.
+6. Todos (jugadores y anfitrión) pueden escribir en el **chat** de la sala.
 
 Si el anfitrión también quiere jugar, usa "Abrir mi cartón" o abre el link en otro dispositivo.
 

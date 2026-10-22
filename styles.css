@@ -250,3 +250,16 @@ a.btn { display: inline-block; text-decoration: none; text-align: center; }
 }
 .sound-gate .btn.big { max-width: 360px; font-size: 22px; padding: 22px; }
 .join .btn.small { margin: 6px 0 18px; }
+
+/* ---------- Chat ---------- */
+
+.player .chat { margin-top: 14px; padding: 12px 16px; }
+.chat h3 { margin: 0 0 8px; }
+.chat-list { list-style: none; padding: 0; margin: 0; max-height: 220px; overflow-y: auto; font-size: 14px; }
+.chat-list li { padding: 4px 0; overflow-wrap: anywhere; }
+.chat-list b { color: var(--accent2); margin-right: 4px; }
+.chat-list .mine b { color: var(--accent); }
+.chat-form { display: flex; gap: 8px; margin-top: 10px; }
+/* 16px para que el celu no haga zoom al escribir */
+.chat-form .text-input { flex: 1; min-width: 0; font-size: 16px; padding: 10px; }
+.toast.chat { font-weight: 600; }

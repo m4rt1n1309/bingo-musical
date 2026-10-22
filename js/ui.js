@@ -44,3 +44,32 @@ export const buildFeed = (players, results) => {
   }
   return items.sort((a, b) => b.at - a.at);
 };
+
+// ---------- Chat ----------
+
+export const CHAT_MAX = 200;
+
+/** Últimos mensajes del chat, el más nuevo abajo. Si estabas leyendo lo último, baja solo. */
+export const renderChat = (list, chat, myUid) => {
+  const msgs = Object.values(chat || {}).filter((m) => typeof m.at === "number").sort((a, b) => a.at - b.at).slice(-60);
+  const key = `${msgs.length}:${msgs.length ? msgs[msgs.length - 1].at : 0}`;
+  if (list.dataset.key === key) return;
+  list.dataset.key = key;
+  const atBottom = list.scrollHeight - list.scrollTop - list.clientHeight < 40;
+  list.innerHTML = msgs.length
+    ? msgs.map((m) => `<li class="${m.uid === myUid ? "mine" : ""}"><b>${escapeHtml(m.name)}</b> ${escapeHtml(m.text)}</li>`).join("")
+    : `<li class="hint">Nadie escribió todavía. ¡Saludá!</li>`;
+  if (atBottom) list.scrollTop = list.scrollHeight;
+};
+
+export const bindChatForm = (form, input, send) => {
+  input.maxLength = CHAT_MAX;
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    const text = input.value.trim().slice(0, CHAT_MAX);
+    if (!text) return;
+    input.value = "";
+    // Si no se pudo mandar, le devolvemos lo que escribió
+    try { await send(text); } catch { if (!input.value) input.value = text; }
+  };
+};

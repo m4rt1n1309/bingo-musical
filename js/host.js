@@ -1,10 +1,10 @@
 import { CATALOG } from "./catalog.js";
 import { ROWS, LEAD_MS, shuffle, timeline, resolveClaims } from "./logic.js";
 import {
-  configured, signIn, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims,
+  configured, signIn, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat,
 } from "./net.js";
 import { createSyncAudio } from "./audio.js";
-import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed } from "./ui.js";
+import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm } from "./ui.js";
 
 const GENRE_NAMES = { rock: "Rock nacional", cumbia: "Cumbia" };
 const sala = salaFromUrl();
@@ -130,6 +130,8 @@ $("btn-end").onclick = guard(() => {
   return endGame();
 });
 $("btn-setup").onclick = () => { manualSetup = true; render(); };
+
+bindChatForm($("chat-form"), $("chat-input"), (text) => pushChat(sala, { uid, name: "🎤 Anfitrión", text }));
 
 $("players").onclick = (e) => {
   const btn = e.target.closest("[data-kick]");
@@ -278,6 +280,7 @@ const render = () => {
   $("feed").innerHTML = feed.length
     ? feed.map((f) => `<li class="feed-${f.kind}">${escapeHtml(f.text)}</li>`).join("")
     : `<li class="hint">Acá aparecen las líneas y bingos que se canten.</li>`;
+  renderChat($("chat"), room.chat, uid);
 
   // Historial (solo si se revela o terminó)
   const history = visibleHistory(game, tl, status === "ended", derived.endAt);

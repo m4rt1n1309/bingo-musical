@@ -20,6 +20,16 @@
             "at": { ".validate": "!data.exists() ? newData.val() === now : newData.val() === data.val()" },
             "verdict": { ".validate": "root.child('rooms').child($code).child('host').val() === auth.uid" }
           }
+        },
+        "chat": {
+          "$id": {
+            ".write": "auth != null && !data.exists() && newData.child('uid').val() === auth.uid && (root.child('rooms').child($code).child('host').val() === auth.uid || root.child('rooms').child($code).child('players').child(auth.uid).exists())",
+            ".validate": "newData.hasChildren(['uid', 'name', 'text', 'at'])",
+            "name": { ".validate": "newData.isString() && newData.val().length <= 24" },
+            "text": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 200" },
+            "at": { ".validate": "newData.val() === now" },
+            "$other": { ".validate": false }
+          }
         }
       }
     }

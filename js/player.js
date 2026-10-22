@@ -1,8 +1,8 @@
 import { CATALOG } from "./catalog.js";
 import { ROWS, shuffle, songKey, timeline, playedAt, checkClaim, resolveClaims, verdictMessage } from "./logic.js";
-import { configured, signIn, serverNow, watchRoom, watchConnection, roomExists, savePlayer, updatePlayer, pushClaim, serverTimestamp } from "./net.js";
+import { configured, signIn, serverNow, watchRoom, watchConnection, roomExists, savePlayer, updatePlayer, pushClaim, pushChat, serverTimestamp } from "./net.js";
 import { createSyncAudio } from "./audio.js";
-import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed } from "./ui.js";
+import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm } from "./ui.js";
 
 const sala = salaFromUrl();
 if (!sala) location.href = "./";
@@ -135,6 +135,10 @@ const claim = async (type) => {
 $("btn-line").onclick = () => claim("line");
 $("btn-bingo").onclick = () => claim("bingo");
 
+// ---------- Chat ----------
+
+bindChatForm($("chat-form"), $("chat-input"), (text) => pushChat(sala, { uid, name: me().name, text }));
+
 let msgTimer = null;
 const showMessage = (text, kind) => {
   const el = $("message");
@@ -158,6 +162,7 @@ const toast = (text, kind) => {
 // ---------- Estado ----------
 
 const seenClaims = new Set();
+const seenChat = new Set();
 let firstSnapshot = true;
 
 const onRoom = async (data) => {
@@ -203,6 +208,13 @@ const onRoom = async (data) => {
       showMessage(verdictMessage(r.type, r.verdict, cardSongs, derived.lineWinner && derived.lineWinner.name), r.verdict.ok ? "ok" : "bad");
     }
   }
+  // Mensajes nuevos del chat: aviso abajo, sin tapar el de una línea o un bingo
+  for (const [id, m] of Object.entries(room.chat || {})) {
+    if (seenChat.has(id)) continue;
+    seenChat.add(id);
+    if (firstSnapshot || m.uid === uid || !p) continue;
+    if ($("toast").hidden || $("toast").classList.contains("chat")) toast(`💬 ${m.name}: ${m.text}`, "chat");
+  }
   firstSnapshot = false;
   render();
 };
@@ -237,7 +249,9 @@ const render = () => {
   audio.update(p ? wantedSong(game, tl, status === "ended") : null);
   $("sound-gate").hidden = !(p && !audio.unlocked && (status === "lobby" || status === "playing"));
 
+  $("chat-box").hidden = !p;
   if (!p) return show(wantsToJoin ? "screen-wait" : "screen-join");
+  renderChat($("chat"), room.chat, uid);
   $("me-name").textContent = `Jugando como ${p.name} · Sala ${sala}`;
   if (!ready) return show("screen-wait");
 
