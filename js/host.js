@@ -59,7 +59,9 @@ $("genres").innerHTML = Object.keys(counts)
   .join("");
 
 const newRound = async (config) => {
-  const pool = CATALOG.map((s, i) => (config.genres.includes(s.genre) ? i : -1)).filter((i) => i >= 0);
+  let pool = CATALOG.map((s, i) => (config.genres.includes(s.genre) ? i : -1)).filter((i) => i >= 0);
+  // Partida rápida o mediana: cada ronda sortea qué temas entran, y los cartones salen solo de esos
+  if (config.songs) pool = shuffle(pool).slice(0, config.songs).sort((a, b) => a - b);
   if (pool.length < ROWS * config.cols) {
     $("prepare-status").hidden = false;
     $("prepare-text").textContent = `Hay ${pool.length} temas, no alcanzan para cartones de ${ROWS * config.cols}. Elegí más géneros o un cartón más chico.`;
@@ -79,6 +81,7 @@ $("btn-prepare").onclick = guard(async () => {
   manualSetup = false;
   await newRound({
     genres,
+    songs: Number($("opt-songs").value),
     duration: Number($("opt-duration").value),
     pause: Number($("opt-pause").value),
     cols: Number($("opt-size").value),
