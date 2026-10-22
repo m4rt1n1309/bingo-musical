@@ -20,15 +20,26 @@ export const shuffle = (arr) => {
 export const songKey = (s) => `${s.artist} — ${s.title}`;
 
 /**
+ * Momento en que quedó congelada una partida en pausa: pausedAt (cuando la pausa llegó a Firebase),
+ * o heardUntil si se pausó porque un tema se trabó, para retomarlo desde donde se cortó.
+ * Si la pausa llegó tarde, heardUntil quedó viejo y no se usa: volver para atrás
+ * desincronizaría a los que siguieron escuchando.
+ */
+export const MAX_REWIND_MS = 15000;
+export const frozenAt = (game) =>
+  game.heardUntil != null && game.pausedAt - game.heardUntil <= MAX_REWIND_MS ? Math.min(game.heardUntil, game.pausedAt) : game.pausedAt;
+
+/**
  * Qué está pasando en la partida en el momento `now` (hora del servidor, en ms).
- * game: { order, config: { duration, pause }, base: { index, start }, pausedAt }
+ * game: { order, config: { duration, pause }, base: { index, start }, pausedAt, heardUntil }
  */
 export const timeline = (game, now) => {
   const D = game.config.duration * 1000;
   const P = game.config.pause * 1000;
   const total = game.order.length;
   const paused = game.pausedAt != null;
-  const t = paused && now > game.pausedAt ? game.pausedAt : now;
+  const until = paused ? frozenAt(game) : null;
+  const t = paused && now > until ? until : now;
   const { index, start } = game.base;
   const out = { paused, total, index, songStart: start, posMs: 0, remainingMs: 0, phaseTotalMs: 0, last: false };
 

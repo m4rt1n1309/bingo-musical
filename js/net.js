@@ -2,7 +2,7 @@
 //
 // rooms/{código}/
 //   host      uid del anfitrión (solo él puede tocar `game`, sacar jugadores y dar veredictos)
-//   game      { status, roundId, config, pool, order, base, pausedAt, autoPaused, endedAt }
+//   game      { status, roundId, config, pool, order, base, pausedAt, heardUntil, autoPaused, endedAt }
 //   players/{uid}  { name, joinedAt, roundId, card }
 //   claims/{id}    { uid, name, type, marked, roundId, at, verdict? }
 //   chat/{id}      { uid, name, text, at }
@@ -10,7 +10,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
-  getDatabase, ref, onValue, get, set, update, push, remove, serverTimestamp,
+  getDatabase, ref, onValue, get, set, update, push, remove, serverTimestamp, goOffline, goOnline,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 import { firebaseConfig } from "./firebase-config.js";
 
@@ -24,6 +24,26 @@ const db = app && getDatabase(app);
 let offset = 0;
 if (db) onValue(ref(db, ".info/serverTimeOffset"), (snap) => { offset = snap.val() || 0; });
 export const serverNow = () => Date.now() + offset;
+
+// En los celulares a veces Firebase queda desconectado aunque haya internet (por ejemplo después de
+// bloquear la pantalla) y tarda mucho en volver solo: si pasa un rato así, lo reconectamos a mano
+if (db) {
+  let connected = false;
+  let lostAt = Date.now();
+  onValue(ref(db, ".info/connected"), (snap) => {
+    connected = !!snap.val();
+    if (!connected) lostAt = Date.now();
+  });
+  const reconnect = (force) => {
+    if (connected || !navigator.onLine || (!force && Date.now() - lostAt < 8000)) return;
+    lostAt = Date.now();
+    goOffline(db);
+    goOnline(db);
+  };
+  setInterval(reconnect, 4000);
+  addEventListener("online", () => reconnect(true));
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) reconnect(true); });
+}
 
 // Avisa cuando este dispositivo pierde o recupera la conexión (con Firebase o con internet en general)
 export const watchConnection = (cb) => {

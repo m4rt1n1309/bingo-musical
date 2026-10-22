@@ -1,7 +1,7 @@
 import { CATALOG } from "./catalog.js";
-import { ROWS, LEAD_MS, shuffle, timeline, resolveClaims } from "./logic.js";
+import { ROWS, LEAD_MS, shuffle, timeline, frozenAt, resolveClaims } from "./logic.js";
 import {
-  configured, signIn, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat,
+  configured, signIn, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat, serverTimestamp,
 } from "./net.js";
 import { createSyncAudio } from "./audio.js";
 import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm } from "./ui.js";
@@ -91,33 +91,37 @@ $("btn-prepare").onclick = guard(async () => {
 
 // ---------- Controles ----------
 
-// at: desde cuándo vale la pausa (puede ser un poco antes de ahora, si el tema se trabó)
-// auto: la puso el juego solo por un problema de conexión, y se saca sola cuando se arregla
-const pause = (at = serverNow(), auto = false) => {
+// auto: la puso el juego solo porque el tema no cargaba, y se saca sola cuando se arregla.
+// pausedAt es la hora en que la pausa llega a Firebase, no la de este celular: si se manda sin
+// conexión y llega tarde, la partida se frena donde va en ese momento en vez de volver para atrás.
+// heardUntil: hasta dónde se escuchó un tema trabado, para retomarlo desde ahí (ver frozenAt).
+const pause = (heardUntil = null, auto = false) => {
   const tl = derived.tl;
   if (!tl || tl.paused) return;
-  return updateGame(sala, { pausedAt: Math.min(at, serverNow()), autoPaused: auto || null });
+  return updateGame(sala, { pausedAt: serverTimestamp(), heardUntil, autoPaused: auto || null });
 };
 
 const resume = () => {
   const game = room.game;
   if (game.pausedAt == null) return;
   // Corremos el punto de partida lo que duró la pausa, así el tema sigue desde donde quedó
-  return updateGame(sala, { pausedAt: null, autoPaused: null, base: { ...game.base, start: game.base.start + (serverNow() - game.pausedAt) } });
+  return updateGame(sala, { pausedAt: null, heardUntil: null, autoPaused: null, base: { ...game.base, start: game.base.start + (serverNow() - frozenAt(game)) } });
 };
 
 const next = () => {
   const tl = derived.tl;
   if (!tl || tl.phase === "preparing") return;
   if (tl.playedCount >= tl.total) return endGame();
-  return updateGame(sala, { pausedAt: null, autoPaused: null, base: { index: tl.playedCount, start: serverNow() + LEAD_MS } });
+  return updateGame(sala, { pausedAt: null, heardUntil: null, autoPaused: null, base: { index: tl.playedCount, start: serverNow() + LEAD_MS } });
 };
 
 const endGame = () => updateGame(sala, { status: "ended", endedAt: serverNow() });
 
-$("btn-start").onclick = guard(() => updateGame(sala, { status: "playing", pausedAt: null, base: { index: 0, start: serverNow() + LEAD_MS } }));
-$("btn-pause").onclick = guard(() => (derived.tl && derived.tl.paused ? resume() : pause()));
-$("btn-next").onclick = guard(next);
+$("btn-start").onclick = guard(() => updateGame(sala, { status: "playing", pausedAt: null, heardUntil: null, autoPaused: null, base: { index: 0, start: serverNow() + LEAD_MS } }));
+// Sin conexión no se mandan: quedarían guardadas y llegarían tarde, desfasando a todos
+const needsConnection = (fn) => () => (online ? fn() : showError("Sin conexión: esperá a que vuelva para pausar o pasar de tema."));
+$("btn-pause").onclick = guard(needsConnection(() => (derived.tl && derived.tl.paused ? resume() : pause())));
+$("btn-next").onclick = guard(needsConnection(next));
 $("btn-new-round").onclick = guard(() => newRound(room.game.config));
 // Está al lado de Pausa: pide un segundo toque para no terminar la partida sin querer
 let endTimer = null;
@@ -168,7 +172,7 @@ const judge = () => {
   if (derived.bingoWinner && game.status === "playing") updateGame(sala, { status: "ended", endedAt: derived.bingoWinner.at });
 };
 
-// ---------- Cortes de internet: pausa sola y sigue sola, sin perderse temas ----------
+// ---------- Temas que no cargan: pausa sola y sigue sola, sin perderse temas ----------
 
 let online = navigator.onLine;
 watchConnection((ok) => { online = ok; });
@@ -180,7 +184,7 @@ const listening = () => $("opt-listen").checked && audio.unlocked;
 // Saca de la lista un tema que no carga aunque haya internet, sin contarlo como sonado
 const skipSong = (tl) => {
   const order = room.game.order.filter((_, i) => i !== tl.index);
-  return updateGame(sala, { order, pausedAt: null, autoPaused: null, base: { index: tl.index, start: serverNow() + LEAD_MS } });
+  return updateGame(sala, { order, pausedAt: null, heardUntil: null, autoPaused: null, base: { index: tl.index, start: serverNow() + LEAD_MS } });
 };
 
 const watchdog = () => {
@@ -189,8 +193,10 @@ const watchdog = () => {
   const game = room.game;
   const stuck = listening() ? audio.stuckAt() : null;
 
+  // Sin conexión no pausamos: los demás no se enterarían y la partida sigue sola en sus celulares.
+  // Además la pausa quedaría guardada y, al volver la conexión, los haría retroceder.
   if (!tl.paused) {
-    if (!online || stuck != null) guard(() => pause(stuck ?? serverNow(), true))();
+    if (online && stuck != null) guard(() => pause(stuck, true))();
     return;
   }
 
@@ -324,7 +330,8 @@ const renderClock = () => {
   $("btn-next").hidden = tl.last && tl.phase === "waiting";
 
   let label;
-  if (tl.paused && room.game.autoPaused) label = online ? "🔄 Cargando el tema… sigue solo en un momento" : "📡 Sin internet — la partida sigue sola cuando vuelva";
+  if (!online) label = "📡 Sin conexión — la partida sigue sola en los celulares, reconectando…";
+  else if (tl.paused && room.game.autoPaused) label = "🔄 Cargando el tema… sigue solo en un momento";
   else if (tl.paused) label = "⏸ En pausa";
   else if (tl.phase === "preparing") label = "Preparados…";
   else if (tl.phase === "playing") label = "🎶 Sonando…";

@@ -294,8 +294,8 @@ const renderStatus = () => {
     $("status-count").textContent = "";
   } else if (tl) {
     $("status-count").textContent = `Tema ${Math.max(1, tl.playedCount)}/${tl.total}`;
-    if (!online) $("status-label").textContent = "📡 Sin internet en tu celu… esperando que vuelva";
-    else if (tl.paused && room.game.autoPaused) $("status-label").textContent = "⏸ En pausa: se cortó internet, sigue sola en un momento";
+    if (!online) $("status-label").textContent = "📡 Sin conexión con la sala… reconectando";
+    else if (tl.paused && room.game.autoPaused) $("status-label").textContent = "⏸ En pausa: un tema no cargaba, sigue sola en un momento";
     else if (tl.paused) $("status-label").textContent = "⏸ En pausa";
     else if (tl.phase === "preparing") $("status-label").textContent = "🎧 Preparados…";
     else if (tl.phase === "playing") $("status-label").textContent = `🎶 Sonando… ${Math.ceil(tl.remainingMs / 1000)}s`;

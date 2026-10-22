@@ -34,6 +34,17 @@ test("avanza solo: tema 3 a los 65 s", () => {
   assert.deepEqual([...playedAt(game(), s(65))], [10, 11, 12]);
 });
 
+test("tema trabado: se congela donde se dejó de escuchar", () => {
+  const t = timeline(game({ pausedAt: s(8), heardUntil: s(3) }), s(50));
+  assert.deepEqual([t.paused, t.phase, t.index, t.posMs], [true, "playing", 0, 3000]);
+});
+
+test("pausa que llegó tarde a Firebase: no vuelve para atrás", () => {
+  // Se trabó en el tema 1 pero la pausa recién llegó con el tema 3 sonando
+  const t = timeline(game({ pausedAt: s(65), heardUntil: s(3) }), s(100));
+  assert.deepEqual([t.paused, t.index, t.posMs], [true, 2, 5000]);
+});
+
 test("después del último tema se queda esperando", () => {
   const t = timeline(game(), s(10000));
   assert.deepEqual([t.phase, t.index, t.last, t.playedCount, t.remainingMs], ["waiting", 9, true, 10, 0]);
