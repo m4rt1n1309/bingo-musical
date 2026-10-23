@@ -17,6 +17,25 @@ export const salaFromUrl = () => (new URLSearchParams(location.search).get("sala
 
 export const joinUrlFor = (sala) => new URL(`jugar.html?sala=${sala}`, location.href).href;
 
+// Lluvia de papelitos de colores sobre toda la pantalla
+const CONFETTI_COLORS = ["#ff4fa3", "#2fd4c4", "#ffc53d", "#3ddc84", "#8f6bff", "#fffaf0"];
+export const confetti = () => {
+  const box = document.createElement("div");
+  box.className = "confetti";
+  for (let i = 0; i < 120; i++) {
+    const p = document.createElement("i");
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.background = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    p.style.setProperty("--drift", `${Math.random() * 160 - 80}px`);
+    p.style.setProperty("--spin", `${Math.random() * 1080 - 540}deg`);
+    p.style.animationDuration = `${2.2 + Math.random() * 1.8}s`;
+    p.style.animationDelay = `${Math.random() * 0.6}s`;
+    box.append(p);
+  }
+  document.body.append(box);
+  setTimeout(() => box.remove(), 5000);
+};
+
 /** Tema que tiene que estar sonando ahora (para el reproductor), o null. */
 export const wantedSong = (game, tl, ended) => {
   if (!tl || ended || tl.paused || (tl.phase !== "playing" && tl.phase !== "preparing")) return null;

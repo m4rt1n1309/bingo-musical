@@ -2,7 +2,7 @@ import { CATALOG } from "./catalog.js";
 import { ROWS, shuffle, songKey, timeline, playedAt, checkClaim, resolveClaims, verdictMessage } from "./logic.js";
 import { configured, signIn, serverNow, watchRoom, watchConnection, roomExists, savePlayer, updatePlayer, pushClaim, pushChat, serverTimestamp } from "./net.js";
 import { createSyncAudio } from "./audio.js";
-import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm } from "./ui.js";
+import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm, confetti } from "./ui.js";
 
 const sala = salaFromUrl();
 if (!sala) location.href = "./";
@@ -129,6 +129,7 @@ const claim = async (type) => {
   (verdict.wrong || []).forEach((i) => $("card").children[i].classList.add("wrong"));
   (verdict.cells || []).forEach((i) => $("card").children[i].classList.add("won"));
   if (navigator.vibrate) navigator.vibrate(verdict.ok ? [100, 50, 100] : 300);
+  if (verdict.ok && type === "line") celebrateLine();
   if (verdict.reason === "no-row" || verdict.reason === "incomplete" || verdict.reason === "line-taken") return;
   await pushClaim(sala, { uid, name: p.name, type, marked: [...marked], roundId: game.roundId });
 };
@@ -147,6 +148,14 @@ const showMessage = (text, kind) => {
   el.hidden = false;
   clearTimeout(msgTimer);
   msgTimer = setTimeout(() => { el.hidden = true; }, 7000);
+};
+
+// Confeti una sola vez por ronda: al cantar, o cuando llega el veredicto si acá no se vio válida
+let celebratedRound = null;
+const celebrateLine = () => {
+  if (celebratedRound === room.game.roundId) return;
+  celebratedRound = room.game.roundId;
+  confetti();
 };
 
 let toastTimer = null;
@@ -206,6 +215,7 @@ const onRoom = async (data) => {
     if (r.uid === uid && p) {
       const cardSongs = p.card.map((i) => CATALOG[i]);
       showMessage(verdictMessage(r.type, r.verdict, cardSongs, derived.lineWinner && derived.lineWinner.name), r.verdict.ok ? "ok" : "bad");
+      if (r.verdict.ok && r.type === "line") celebrateLine();
     }
   }
   // Mensajes nuevos del chat: aviso abajo, sin tapar el de una línea o un bingo

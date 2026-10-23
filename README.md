@@ -19,7 +19,7 @@ No tiene servidor propio:
 1. **Anfitrión:** "Crear partida" → configurar → "Preparar canciones" → compartir el link por WhatsApp.
 2. **Jugadores:** abren el link, ponen su nombre y tocan "Activar sonido". Si quieren, cambian el cartón antes de empezar.
 3. El anfitrión toca **Empezar**. Los temas suenan solos, uno detrás de otro.
-4. Cuando alguien canta una línea válida, la música se pausa para todos y el anfitrión decide cuándo seguir.
+4. Cuando alguien canta una línea válida, le salen papelitos de colores en el celular y la música sigue sola.
 5. **Nueva ronda** reparte cartones nuevos sin que nadie tenga que volver a entrar.
 6. Todos (jugadores y anfitrión) pueden escribir en el **chat** de la sala.
 

@@ -178,8 +178,6 @@ const judge = () => {
     if (!raw || raw.verdict || judged.has(r.id)) continue;
     judged.add(r.id);
     setVerdict(sala, r.id, r.verdict).catch(() => judged.delete(r.id));
-    // Línea válida: pausa para festejar
-    if (r.verdict.ok && r.type === "line" && derived.tl && !derived.tl.paused) pause();
   }
   if (derived.bingoWinner && game.status === "playing") updateGame(sala, { status: "ended", endedAt: derived.bingoWinner.at });
 };
@@ -255,7 +253,7 @@ const onRoom = (data) => {
     if (announced.has(r.id)) continue;
     announced.add(r.id);
     if (!firstSnapshot && r.verdict.ok) {
-      showBanner(r.type === "line" ? `🎉 ${r.name} cantó LÍNEA — la música quedó en pausa` : `🏆 ${r.name} cantó ¡BINGO!`, r.type === "line" ? "line" : "bingo");
+      showBanner(r.type === "line" ? `🎉 ${r.name} cantó LÍNEA — ¡sigue la música!` : `🏆 ${r.name} cantó ¡BINGO!`, r.type === "line" ? "line" : "bingo");
     }
   }
   firstSnapshot = false;

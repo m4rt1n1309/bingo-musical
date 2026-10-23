@@ -202,6 +202,15 @@ select {
 .banner.bad { background: var(--bad); color: #fff; }
 @keyframes pop { from { transform: scale(.8); opacity: 0; } }
 
+.confetti { position: fixed; inset: 0; z-index: 30; pointer-events: none; overflow: hidden; }
+.confetti i {
+  position: absolute; top: -20px; width: 10px; height: 16px; border-radius: 2px;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+  to { transform: translate(var(--drift), 110vh) rotate(var(--spin)); }
+}
+
 /* Celular */
 .player main { padding: 10px 10px 24px; }
 .status-bar {
