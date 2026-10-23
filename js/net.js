@@ -63,6 +63,20 @@ export const signIn = () =>
     signInAnonymously(auth).catch(reject);
   });
 
+// Después de mucho rato con la pantalla bloqueada, Firebase a veces rechaza lo que escribimos como si
+// fuéramos otro (la identidad quedó vencida). Renovamos la identidad y probamos una vez más.
+export const isDenied = (err) => /permission[_ ]denied/i.test(`${err && (err.code || "")} ${err && (err.message || "")}`);
+const retryDenied = (write) => async (...args) => {
+  try {
+    return await write(...args);
+  } catch (err) {
+    if (!isDenied(err) || !auth.currentUser) throw err;
+    await auth.currentUser.getIdToken(true);
+    await new Promise((r) => setTimeout(r, 500));
+    return write(...args);
+  }
+};
+
 const roomRef = (code, sub = "") => ref(db, `rooms/${code}${sub ? `/${sub}` : ""}`);
 
 // Sin letras que se confundan (0/O, 1/I)
@@ -89,17 +103,17 @@ export const roomExists = async (code) => (await get(roomRef(code, "host"))).exi
 
 export const watchRoom = (code, onRoom) => onValue(roomRef(code), (snap) => onRoom(snap.val()));
 
-export const setGame = (code, game) => set(roomRef(code, "game"), game);
-export const updateGame = (code, patch) => update(roomRef(code, "game"), patch);
+export const setGame = retryDenied((code, game) => set(roomRef(code, "game"), game));
+export const updateGame = retryDenied((code, patch) => update(roomRef(code, "game"), patch));
 
-export const savePlayer = (code, uid, player) => set(roomRef(code, `players/${uid}`), player);
-export const updatePlayer = (code, uid, patch) => update(roomRef(code, `players/${uid}`), patch);
-export const removePlayer = (code, uid) => remove(roomRef(code, `players/${uid}`));
+export const savePlayer = retryDenied((code, uid, player) => set(roomRef(code, `players/${uid}`), player));
+export const updatePlayer = retryDenied((code, uid, patch) => update(roomRef(code, `players/${uid}`), patch));
+export const removePlayer = retryDenied((code, uid) => remove(roomRef(code, `players/${uid}`)));
 
-export const pushClaim = (code, claim) => push(roomRef(code, "claims"), { ...claim, at: serverTimestamp() });
-export const setVerdict = (code, id, verdict) => set(roomRef(code, `claims/${id}/verdict`), verdict);
-export const clearClaims = (code) => remove(roomRef(code, "claims"));
+export const pushClaim = retryDenied((code, claim) => push(roomRef(code, "claims"), { ...claim, at: serverTimestamp() }));
+export const setVerdict = retryDenied((code, id, verdict) => set(roomRef(code, `claims/${id}/verdict`), verdict));
+export const clearClaims = retryDenied((code) => remove(roomRef(code, "claims")));
 
-export const pushChat = (code, msg) => push(roomRef(code, "chat"), { ...msg, at: serverTimestamp() });
+export const pushChat = retryDenied((code, msg) => push(roomRef(code, "chat"), { ...msg, at: serverTimestamp() }));
 
 export { serverTimestamp };

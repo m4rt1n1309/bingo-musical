@@ -1,7 +1,7 @@
 import { CATALOG } from "./catalog.js";
 import { ROWS, LEAD_MS, shuffle, timeline, frozenAt, resolveClaims } from "./logic.js";
 import {
-  configured, signIn, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat, serverTimestamp,
+  configured, signIn, isDenied, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat, serverTimestamp,
 } from "./net.js";
 import { createSyncAudio } from "./audio.js";
 import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm } from "./ui.js";
@@ -28,7 +28,7 @@ const showError = (text) => {
   setTimeout(() => { $("host-error").hidden = true; }, 5000);
 };
 const guard = (fn) => async (...args) => {
-  try { await fn(...args); } catch (err) { showError(`No se pudo: ${err.message}`); }
+  try { await fn(...args); } catch (err) { showError(isDenied(err) ? "Firebase no te reconoce como anfitrión. Recargá la página y probá de nuevo." : `No se pudo: ${err.message}`); }
 };
 
 // ---------- Invitación ----------
