@@ -35,5 +35,5 @@ Si el anfitrión también quiere jugar, usa "Abrir mi cartón" o abre el link en
 
 - `npm run dev`: sirve la página en http://localhost:8080.
 - `npm test`: tests de las reglas del juego.
-- `database.rules.json`: reglas de seguridad de Firebase. Si las cambiás, hay que pegarlas en la consola de Firebase (Realtime Database → Reglas → Publicar).
+- `database.rules.json`: reglas de seguridad de Firebase. Si las cambiás, publicalas con `npm run deploy-rules` (la primera vez, `npm run firebase-login` para entrar con la cuenta de Google del proyecto). También se pueden pegar a mano en la consola de Firebase (Realtime Database → Reglas → Publicar).
 - `js/firebase-config.js`: datos del proyecto de Firebase. No son secretos.

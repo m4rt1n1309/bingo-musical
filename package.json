@@ -7,7 +7,9 @@
   "scripts": {
     "catalogo": "node tools/build-catalog.js",
     "dev": "node tools/dev-server.js",
-    "test": "node tools/test-logic.js"
+    "test": "node tools/test-logic.js",
+    "firebase-login": "npx --yes firebase-tools login",
+    "deploy-rules": "npx --yes firebase-tools deploy --only database"
   },
   "license": "MIT"
 }
