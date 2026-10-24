@@ -115,5 +115,6 @@ export const setVerdict = retryDenied((code, id, verdict) => set(roomRef(code, `
 export const clearClaims = retryDenied((code) => remove(roomRef(code, "claims")));
 
 export const pushChat = retryDenied((code, msg) => push(roomRef(code, "chat"), { ...msg, at: serverTimestamp() }));
+export const clearChat = retryDenied((code) => remove(roomRef(code, "chat")));
 
 export { serverTimestamp };

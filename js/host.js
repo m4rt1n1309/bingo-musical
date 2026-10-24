@@ -1,7 +1,7 @@
 import { CATALOG } from "./catalog.js";
 import { ROWS, LEAD_MS, shuffle, timeline, frozenAt, resolveClaims } from "./logic.js";
 import {
-  configured, signIn, isDenied, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat, serverTimestamp,
+  configured, signIn, isDenied, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, clearChat, pushChat, serverTimestamp,
 } from "./net.js";
 import { createSyncAudio } from "./audio.js";
 import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm, bindChatView } from "./ui.js";
@@ -67,7 +67,8 @@ const newRound = async (config) => {
     $("prepare-text").textContent = `Hay ${pool.length} temas, no alcanzan para cartones de ${ROWS * config.cols}. Elegí más géneros o un cartón más chico.`;
     return;
   }
-  await clearClaims(sala);
+  // Cada ronda arranca con el chat vacío, así no crece para siempre
+  await Promise.all([clearClaims(sala), clearChat(sala)]);
   await setGame(sala, { status: "lobby", roundId: newId(), config, pool, order: shuffle(pool), createdAt: serverNow() });
 };
 
