@@ -709,6 +709,204 @@ export const CATALOG = [
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/02/92/3e/02923ecf-1814-ff29-8693-d80ffd2767b6/mzaf_14255196736971505678.plus.aac.p.m4a"
  },
  {
+  "genre": "rock",
+  "artist": "Soda Stereo",
+  "title": "Sobredosis de TV",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/64/2f/fb/642ffb71-bff5-7c70-5005-16d5cb393bcb/mzaf_809981239347264954.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Soda Stereo",
+  "title": "Hombre al Agua",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/76/58/d9765801-2255-c467-1d0b-4ecad87ef742/mzaf_4228479819264608558.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Charly García",
+  "title": "Raros Peinados Nuevos",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/80/cc/9e/80cc9e5c-cfeb-608f-612d-da37060e575f/mzaf_10522140346980383496.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Charly García",
+  "title": "Fanky",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/41/fa/d0/41fad0f1-fcc6-2ea6-d854-6ea4e55083a0/mzaf_12435550322909026680.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Charly García",
+  "title": "Pasajera en Trance",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1c/4e/53/1c4e53d6-8516-a091-6117-6d58c0eab6dc/mzaf_9771680824795696805.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Fito Páez",
+  "title": "Circo Beat",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a9/24/1f/a9241fe5-ab68-bfc1-0f3f-f937f4e0efca/mzaf_14644614283655788431.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Fito Páez",
+  "title": "Tumbas de la Gloria",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c9/ea/e3/c9eae3a9-bee0-64c9-da16-f6b623ba163a/mzaf_5472220159364061396.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Pescado Rabioso",
+  "title": "Me Gusta Ese Tajo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d6/f1/2c/d6f12c33-85bf-4df7-dc46-177047ec6b63/mzaf_7786010155258574986.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Enanitos Verdes",
+  "title": "Luz de Día",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/95/01/5a/95015a6d-171c-14ae-661a-279b6cbe2230/mzaf_12925198705319372089.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Enanitos Verdes",
+  "title": "Mariposas",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/0f/ec/610fece2-4b99-d146-6adf-45e1a325ac92/mzaf_17764709444759170038.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Fabulosos Cadillacs",
+  "title": "Carmela",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/92/40/30/924030d7-85d7-fd69-cc13-93b0f779863a/mzaf_5228917087541721301.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Fabulosos Cadillacs",
+  "title": "Calaveras y Diablitos",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/03/d4/26/03d4263b-bda5-af73-4b51-37e262a22baa/mzaf_11994502012052595898.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Andrés Calamaro",
+  "title": "Los Aviones",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/36/7c/c2367c8a-de45-8bde-cf35-47cf74d97d4d/mzaf_11520260573274207812.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Andrés Calamaro",
+  "title": "Alta Suciedad",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/3b/78/a0/3b78a098-3572-d1eb-9cb4-215161d30dd5/mzaf_1676992532231520715.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Rodríguez",
+  "title": "Dulce Condena",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2c/53/f4/2c53f435-3295-18d6-5672-00ee29f3539d/mzaf_10992304698830779813.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Divididos",
+  "title": "Sábado",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/af/e7/40/afe74096-bb2a-26a3-8bc9-396d40864496/mzaf_17505271668791268169.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Divididos",
+  "title": "Ala Delta",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3a/a8/2f/3aa82fd2-3843-1b45-d755-51991f2ef112/mzaf_16191230224754218808.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Piojos",
+  "title": "Babilonia",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/16/02/8a/16028afc-df27-f04b-6f39-009e54f093bc/mzaf_13663817204153901690.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Piojos",
+  "title": "Verano del 92",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/79/c6/b3/79c6b336-e9f9-4b5f-9504-10b71bab7986/mzaf_14261653420215792213.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "La Renga",
+  "title": "Balada del Diablo y la Muerte",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1d/de/88/1dde88a1-868d-bf55-3c21-fd155bea2727/mzaf_12580483803313105185.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "La Renga",
+  "title": "Panic Show",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/95/50/ac/9550ac02-c57a-249e-5893-be66ad08c281/mzaf_4482805275836859164.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Patricio Rey y sus Redonditos de Ricota",
+  "title": "La Bestia Pop",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/76/a8/45/76a8453b-b791-87fc-d5e2-97cdcb3f76e7/mzaf_3879579432302247248.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Patricio Rey y sus Redonditos de Ricota",
+  "title": "Un Pacman en el Savoy",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/fc/1e/b4fc1e2b-7866-3a46-d8d6-bc794ec1e903/mzaf_14469468010797724209.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Babasónicos",
+  "title": "Putita",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c8/97/65/c8976551-63be-1285-e2c8-1380ba92a83c/mzaf_16105310598801707649.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Gustavo Cerati",
+  "title": "Bocanada",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/bc/b9/cabcb953-3fd7-fd19-b0d3-8256623ebfc8/mzaf_1266976932543291965.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Virus",
+  "title": "Qué Hago en Manila",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/59/58/00/59580042-81c7-fbc6-8744-dbc4e0f557cd/mzaf_11778410417864957404.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Intoxicados",
+  "title": "Reggae para Mirta",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d8/3d/be/d83dbeb8-74cf-21db-98ee-ab5d4f042b6e/mzaf_13800623007940289211.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Ratones Paranoicos",
+  "title": "Para Siempre",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d9/a7/3f/d9a73fd6-e09f-4826-ec69-1d6d9e3456cf/mzaf_12487346946092821340.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Viejas Locas",
+  "title": "Intoxicado",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2e/7e/3f/2e7e3f2c-43fa-dba6-191a-e103d7c25e39/mzaf_10100689539346195893.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Miguel Mateos",
+  "title": "Cuando Seas Grande",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d6/24/c7/d624c7ae-ac49-d8be-e020-adde39b9ab77/mzaf_6913923527189897895.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Miguel Mateos",
+  "title": "Tirá Para Arriba",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/77/1c/b2771cc4-9997-acdc-d1d9-d9e94306ab8b/mzaf_16225173163304382454.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Sumo",
+  "title": "Los Viejos Vinagres",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5a/e7/15/5ae715dd-6d3f-eafc-7986-01c4e6e0db6e/mzaf_6265983008678901326.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Kapanga",
+  "title": "El Mono Relojero",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e2/06/17/e2061701-43cc-0d1d-2e80-5f832eaddb42/mzaf_14430705225186827665.plus.aac.p.m4a"
+ },
+ {
   "genre": "cumbia",
   "artist": "Gilda",
   "title": "No Me Arrepiento de Este Amor",
@@ -1163,5 +1361,101 @@ export const CATALOG = [
   "artist": "Los Palmeras",
   "title": "El Parrandero",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/82/cf/ec/82cfec2d-344d-48c3-2249-472ae4cd922a/mzaf_10478742423028725003.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Rodrigo",
+  "title": "Aprendiz",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/74/a8/c8/74a8c8f2-d6be-3db2-7b94-dc60c101d101/mzaf_2969114762462617935.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Gilda",
+  "title": "Como Tú",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/04/35/06/04350650-bd07-517f-84e2-ab72799e4bc9/mzaf_4593584926103157117.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "La Mona Jiménez",
+  "title": "El Bum Bum",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5a/80/65/5a80654c-6370-4ef0-035d-bc1d3178225c/mzaf_16767123417954634678.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Yerba Brava",
+  "title": "La Cumbia de los Trapos",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/36/ee/4c/36ee4c2b-1ec3-3a65-b4cc-4f81bf0b5912/mzaf_11316761871187887465.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Amar Azul",
+  "title": "Tormenta",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d7/f5/8a/d7f58ac2-34b3-7786-67cf-beb588f5bd67/mzaf_11912811079306238150.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Grupo 5",
+  "title": "Motor y Motivo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3b/ab/73/3bab733c-e2f8-2dd6-4b3b-6baf3e8a4b05/mzaf_5217169978713708393.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Alcides",
+  "title": "Violeta",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/03/25/46/03254691-60f7-cff3-735e-c34609b869cc/mzaf_249082033667276069.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Los Ángeles Azules",
+  "title": "Mi Niña Mujer",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/0e/e6/c30ee680-cf34-6991-6720-5f526abe5ecd/mzaf_17716722028714549546.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Karina",
+  "title": "Fuiste Tú",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/68/db/18/68db18e0-4543-e774-5e69-fd7911602feb/mzaf_10182801704523606315.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "La Sonora Dinamita",
+  "title": "El Africano",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/20/3a/41/203a413a-c407-5be2-ddba-1bdff08405b1/mzaf_10754508264338965278.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Los Mirlos",
+  "title": "Sonido Amazónico",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/db/a1/6f/dba16f3a-b9bb-bcce-0296-3e49aa7afaea/mzaf_12883288602702000883.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Celso Piña",
+  "title": "Aunque No Sea Conmigo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a8/63/9a/a8639aad-b8a5-7837-3878-be1aced96a58/mzaf_16053438830095387038.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Rombai",
+  "title": "Noche Loca",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/01/08/d0/0108d0bc-18e6-20c1-96ac-f4ee8dbc70b9/mzaf_13141734426304792512.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Damas Gratis",
+  "title": "Los Dueños del Pabellón",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1f/cf/66/1fcf66fb-a4af-2016-1a8c-aab25cfc1ea5/mzaf_13189786448612424678.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Ráfaga",
+  "title": "Maldito Corazón",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b9/5e/a6/b95ea6cb-27c9-65f7-0f76-eafe0ea86d5e/mzaf_7472679179233141231.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Américo",
+  "title": "El Embrujo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/00/a5/80/00a5800e-15f0-00c8-57f0-061b3fe8ff79/mzaf_1708977922483100630.plus.aac.p.m4a"
  }
 ];
