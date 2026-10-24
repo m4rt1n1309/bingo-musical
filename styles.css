@@ -264,7 +264,23 @@ a.btn { display: inline-block; text-decoration: none; text-align: center; }
 
 .player .chat { margin-top: 14px; padding: 12px 16px; }
 .chat h3 { margin: 0 0 8px; }
+.chat-toggle {
+  display: flex; justify-content: space-between; align-items: baseline; width: 100%;
+  font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left;
+}
+.chat-toggle-hint { font-size: 13px; font-weight: 600; color: var(--muted); }
+.chat-wrap { position: relative; }
 .chat-list { list-style: none; padding: 0; margin: 0; max-height: 220px; overflow-y: auto; font-size: 14px; }
+.chat.expanded .chat-list { max-height: 60vh; }
+.chat-list .chat-more { text-align: center; padding: 2px 0 8px; }
+.chat-more .btn { font-size: 13px; padding: 6px 12px; }
+.chat-new {
+  position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%);
+  font: inherit; font-size: 13px; font-weight: 700; white-space: nowrap;
+  color: #10302d; background: var(--accent2); border: 0; border-radius: 99px;
+  padding: 6px 14px; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+}
+.chat-new[hidden] { display: none; }
 .chat-list li { padding: 4px 0; overflow-wrap: anywhere; }
 .chat-list b { color: var(--accent2); margin-right: 4px; }
 .chat-list .mine b { color: var(--accent); }

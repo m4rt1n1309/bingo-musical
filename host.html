@@ -125,8 +125,11 @@
           <div id="banner" class="banner" hidden></div>
 
           <section class="panel chat" id="chat-box">
-            <h3>💬 Chat</h3>
-            <ul id="chat" class="chat-list"></ul>
+            <h3><button type="button" class="chat-toggle" id="chat-toggle" aria-expanded="false">💬 Chat <span class="chat-toggle-hint">Agrandar ⤢</span></button></h3>
+            <div class="chat-wrap">
+              <ul id="chat" class="chat-list"></ul>
+              <button type="button" class="chat-new" id="chat-new" hidden></button>
+            </div>
             <form id="chat-form" class="chat-form">
               <input id="chat-input" class="text-input" autocomplete="off" enterkeyhint="send" placeholder="Escribí un mensaje…">
               <button class="btn primary" type="submit">Enviar</button>

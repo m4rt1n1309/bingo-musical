@@ -4,7 +4,7 @@ import {
   configured, signIn, isDenied, serverNow, newId, watchRoom, watchConnection, setGame, updateGame, removePlayer, setVerdict, clearClaims, pushChat, serverTimestamp,
 } from "./net.js";
 import { createSyncAudio } from "./audio.js";
-import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm } from "./ui.js";
+import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm, bindChatView } from "./ui.js";
 
 const GENRE_NAMES = { rock: "Rock nacional", cumbia: "Cumbia" };
 const sala = salaFromUrl();
@@ -151,6 +151,7 @@ $("btn-end").onclick = guard(() => {
 $("btn-setup").onclick = () => { manualSetup = true; render(); };
 
 bindChatForm($("chat-form"), $("chat-input"), (text) => pushChat(sala, { uid, name: "🎤 Anfitrión", text }));
+bindChatView($("chat-box"));
 
 $("players").onclick = (e) => {
   const btn = e.target.closest("[data-kick]");

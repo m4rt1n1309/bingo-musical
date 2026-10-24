@@ -66,17 +66,90 @@ export const buildFeed = (results) => {
 
 export const CHAT_MAX = 200;
 
-/** Últimos mensajes del chat, el más nuevo abajo. Si estabas leyendo lo último, baja solo. */
+const CHAT_PAGE = 50;
+
+// Lo que el chat necesita recordar entre una actualización y otra
+const chatState = new WeakMap();
+const stateOf = (list) => {
+  if (!chatState.has(list)) chatState.set(list, { limit: CHAT_PAGE, unseen: 0, lastAt: null, chat: null, myUid: null });
+  return chatState.get(list);
+};
+
+const isAtBottom = (list) => list.scrollHeight - list.scrollTop - list.clientHeight < 40;
+
+const showUnseen = (list, n) => {
+  stateOf(list).unseen = n;
+  const pill = list.parentNode.querySelector(".chat-new");
+  if (!pill) return;
+  pill.hidden = n === 0;
+  pill.textContent = `↓ ${n} ${n === 1 ? "mensaje nuevo" : "mensajes nuevos"}`;
+};
+
+/**
+ * Mensajes del chat, el más nuevo abajo. Si estabas leyendo lo último, baja solo;
+ * si estabas leyendo algo viejo, te deja ahí y avisa cuántos llegaron.
+ */
 export const renderChat = (list, chat, myUid) => {
-  const msgs = Object.values(chat || {}).filter((m) => typeof m.at === "number").sort((a, b) => a.at - b.at).slice(-60);
-  const key = `${msgs.length}:${msgs.length ? msgs[msgs.length - 1].at : 0}`;
+  const st = stateOf(list);
+  st.chat = chat;
+  st.myUid = myUid;
+  const all = Object.values(chat || {}).filter((m) => typeof m.at === "number").sort((a, b) => a.at - b.at);
+  const msgs = all.slice(-st.limit);
+  const hasMore = all.length > msgs.length;
+  const key = `${all.length}:${all.length ? all[all.length - 1].at : 0}:${st.limit}`;
   if (list.dataset.key === key) return;
   list.dataset.key = key;
-  const atBottom = list.scrollHeight - list.scrollTop - list.clientHeight < 40;
+
+  const fresh = st.lastAt === null ? [] : all.filter((m) => m.at > st.lastAt);
+  st.lastAt = all.length ? all[all.length - 1].at : 0;
+  // Si el que escribió fui yo, lo llevo al final aunque estuviera leyendo arriba
+  const stick = isAtBottom(list) || fresh.some((m) => m.uid === myUid);
+
   list.innerHTML = msgs.length
-    ? msgs.map((m) => `<li class="${m.uid === myUid ? "mine" : ""}"><b>${escapeHtml(m.name)}</b> ${escapeHtml(m.text)}</li>`).join("")
+    ? (hasMore ? `<li class="chat-more"><button type="button" class="btn ghost" data-more>Ver anteriores</button></li>` : "") +
+      msgs.map((m) => `<li class="${m.uid === myUid ? "mine" : ""}"><b>${escapeHtml(m.name)}</b> ${escapeHtml(m.text)}</li>`).join("")
     : `<li class="hint">Nadie escribió todavía. ¡Saludá!</li>`;
-  if (atBottom) list.scrollTop = list.scrollHeight;
+
+  if (stick) {
+    list.scrollTop = list.scrollHeight;
+    showUnseen(list, 0);
+  } else if (fresh.length) {
+    showUnseen(list, st.unseen + fresh.length);
+  }
+};
+
+/** Agrandar/achicar la caja, el aviso de mensajes nuevos y "Ver anteriores". */
+export const bindChatView = (box) => {
+  const list = box.querySelector(".chat-list");
+  const toggle = box.querySelector(".chat-toggle");
+  const pill = box.querySelector(".chat-new");
+
+  toggle.onclick = () => {
+    const stick = isAtBottom(list);
+    const expanded = box.classList.toggle("expanded");
+    toggle.setAttribute("aria-expanded", expanded);
+    toggle.querySelector(".chat-toggle-hint").textContent = expanded ? "Achicar ⤡" : "Agrandar ⤢";
+    if (stick) list.scrollTop = list.scrollHeight;
+  };
+
+  pill.onclick = () => {
+    list.scrollTo({ top: list.scrollHeight, behavior: "smooth" });
+    showUnseen(list, 0);
+  };
+
+  list.addEventListener("scroll", () => {
+    if (stateOf(list).unseen && isAtBottom(list)) showUnseen(list, 0);
+  }, { passive: true });
+
+  // Al cargar los anteriores, que no salte lo que estabas leyendo
+  list.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-more]")) return;
+    const st = stateOf(list);
+    const fromBottom = list.scrollHeight - list.scrollTop;
+    st.limit += CHAT_PAGE;
+    renderChat(list, st.chat, st.myUid);
+    list.scrollTop = list.scrollHeight - fromBottom;
+  });
 };
 
 export const bindChatForm = (form, input, send) => {

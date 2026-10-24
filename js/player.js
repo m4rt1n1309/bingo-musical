@@ -2,7 +2,7 @@ import { CATALOG } from "./catalog.js";
 import { ROWS, shuffle, songKey, timeline, playedAt, checkClaim, resolveClaims, verdictMessage } from "./logic.js";
 import { configured, signIn, serverNow, watchRoom, watchConnection, roomExists, savePlayer, updatePlayer, pushClaim, pushChat, serverTimestamp } from "./net.js";
 import { createSyncAudio } from "./audio.js";
-import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm, confetti } from "./ui.js";
+import { $, escapeHtml, store, show, salaFromUrl, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm, bindChatView, confetti } from "./ui.js";
 
 const sala = salaFromUrl();
 if (!sala) location.href = "./";
@@ -139,6 +139,7 @@ $("btn-bingo").onclick = () => claim("bingo");
 // ---------- Chat ----------
 
 bindChatForm($("chat-form"), $("chat-input"), (text) => pushChat(sala, { uid, name: me().name, text }));
+bindChatView($("chat-box"));
 
 let msgTimer = null;
 const showMessage = (text, kind) => {
