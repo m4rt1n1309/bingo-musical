@@ -1,7 +1,7 @@
 {
   "name": "Bingo Musical",
   "short_name": "Bingo Musical",
-  "description": "Bingo de rock nacional y cumbia para jugar a distancia",
+  "description": "Bingo de rock nacional, cumbia y pop latino para jugar a distancia",
   "lang": "es",
   "start_url": "./",
   "scope": "./",

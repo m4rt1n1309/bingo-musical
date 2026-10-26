@@ -1,6 +1,6 @@
 # 🎵 Bingo Musical
 
-Bingo online de rock nacional y cumbia. El anfitrión crea una sala y comparte el link; cada jugador entra desde su celular, **el mismo tema suena en todos los celulares a la vez** y cada uno marca en su cartón. Gana el primero que canta **línea** o **bingo**.
+Bingo online de rock nacional, cumbia y pop latino. El anfitrión crea una sala y comparte el link; cada jugador entra desde su celular, **el mismo tema suena en todos los celulares a la vez** y cada uno marca en su cartón. Gana el primero que canta **línea** o **bingo**.
 
 **Jugar:** https://m4rt1n1309.github.io/bingo-musical/
 
@@ -30,6 +30,8 @@ Si el anfitrión también quiere jugar, usa "Abrir mi cartón" o abre el link en
 1. Editá `songs.js`.
 2. Corré `npm run catalogo`. Busca en iTunes los temas nuevos y regenera `js/catalog.js`, y avisa si alguno no se encontró.
 3. Subí los cambios a GitHub.
+
+Para sacar temas del juego sin borrarlos de `songs.js`, corré `npm run temas`. Se abre una pantalla en la compu (http://localhost:8090) con todos los temas: destildá los que no querés y tocá **Guardar**. Quedan anotados en `excluidos.json`, el catálogo se arma de nuevo sin ellos y después hay que subir los cambios a GitHub. Esa pantalla no se publica: funciona solo en tu compu mientras el comando está corriendo.
 
 ## Desarrollo
 

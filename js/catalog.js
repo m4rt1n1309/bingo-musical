@@ -907,6 +907,168 @@ export const CATALOG = [
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e2/06/17/e2061701-43cc-0d1d-2e80-5f832eaddb42/mzaf_14430705225186827665.plus.aac.p.m4a"
  },
  {
+  "genre": "rock",
+  "artist": "Soda Stereo",
+  "title": "Corazón Delator",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/97/0e/e8/970ee89e-5223-7037-77d8-93d581f2fb02/mzaf_11717903962042072506.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Charly García",
+  "title": "Influencia",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/5c/94/b85c9409-e722-60b1-5ec7-4a78e387ffd7/mzaf_17058646592632543730.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Charly García",
+  "title": "Asesíname",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ba/62/bc/ba62bc9e-82a2-7e75-e89b-c2d2105fa7c9/mzaf_10459542556020717406.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Fito Páez",
+  "title": "Dar es Dar",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/19/e5/4419e5a9-1198-3595-13ca-678ce2aac1db/mzaf_6570359328037728627.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Fito Páez",
+  "title": "Brillante Sobre el Mic",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/56/3a/c2/563ac2ff-7fd1-2484-c7a1-56fb5f3a6e8f/mzaf_15010737303989769492.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Gustavo Cerati",
+  "title": "Lago en el Cielo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4e/92/47/4e9247c9-5656-d6e1-1f02-2938437f8e23/mzaf_7638972289327152231.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Gustavo Cerati",
+  "title": "Te Llevo Para Que Me Lleves",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c7/38/18/c738184c-9323-ec12-b499-806d44e8c34f/mzaf_12307845200640263940.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Andrés Calamaro",
+  "title": "Clonazepán y Circo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/47/7c/09/477c091c-d9c9-57b6-1924-4b3fb3be46d6/mzaf_11961420941159195108.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Patricio Rey y sus Redonditos de Ricota",
+  "title": "Juguetes Perdidos",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f9/92/30/f9923092-a8da-f6d8-c1c0-7e3ca0b99c7a/mzaf_16722027224655636921.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Patricio Rey y sus Redonditos de Ricota",
+  "title": "Todo Un Palo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6b/77/50/6b7750c5-0187-6a8d-4991-842d96d064ef/mzaf_8267423385023709708.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "La Renga",
+  "title": "La Razón Que Te Demora",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/e7/6c/11e76cec-c786-331b-51f8-86b0322f6d85/mzaf_2108366960297336403.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Piojos",
+  "title": "Maradó",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/1b/69/581b69c4-ea9c-83bc-4e4e-a3026ef83760/mzaf_6984738824018775873.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Piojos",
+  "title": "El Farolito",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/24/b9/2524b9be-3f85-8d37-9e90-39708e075406/mzaf_11099912204013899164.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Divididos",
+  "title": "Par Mil",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fa/c4/d1/fac4d181-ec54-2a30-7b8f-e3721a7c34b1/mzaf_1791648768456185597.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Divididos",
+  "title": "Salir a Asustar",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/8a/ee/588aee81-1dd6-5d12-e22a-d10e86e3d084/mzaf_239853699501950835.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Callejeros",
+  "title": "Una Nueva Noche Fría",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/19/68/22/196822c3-848a-65c7-7732-96d32ac384c2/mzaf_12547068461456838154.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "La Beriso",
+  "title": "No Me Olvides",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/34/41/43/34414372-2752-9261-0d9d-a899a72d0e6b/mzaf_283424690510977830.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "No Te Va Gustar",
+  "title": "A las Nueve",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/29/aa/27/29aa2789-53f6-dbfb-ae20-5205a61bc2ef/mzaf_8674979302047624292.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "No Te Va Gustar",
+  "title": "Chau",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/4d/38/614d381b-9e43-e981-b382-c21ad05cafb1/mzaf_3753187084937827581.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "El Otro Yo",
+  "title": "Alegría",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/08/b2/97/08b2970d-be7c-fc06-185c-69600ad4d220/mzaf_1969255468112014315.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Tipitos",
+  "title": "Silencio",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0c/41/3a/0c413ab9-9a30-9c7e-cdef-b6ca66dc79b0/mzaf_5342277965472494777.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Massacre",
+  "title": "Plan B: Anhelo de Satisfacción",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cf/27/e6/cf27e6c1-52a1-9a74-142a-884b9466db71/mzaf_6104490839848477840.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "GIT",
+  "title": "Es por Amor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/9a/6d/d19a6d65-5437-c667-adea-02552dcaefb5/mzaf_4126939961514006520.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Vilma Palma e Vampiros",
+  "title": "La Pachanga",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f9/21/33/f9213313-a992-0906-0866-f366b89558d7/mzaf_5658006754017958109.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Los Caballeros de la Quema",
+  "title": "Avanti Morocha",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/63/e5/f0/63e5f07e-cd15-9f4e-e2ea-5a7cdbda7cd4/mzaf_5016482608599006050.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Bersuit Vergarabat",
+  "title": "Se Viene",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/95/0a/55/950a550c-91f1-484b-e09e-4d0a393f994e/mzaf_2136215938385841321.plus.aac.p.m4a"
+ },
+ {
+  "genre": "rock",
+  "artist": "Las Pastillas del Abuelo",
+  "title": "Rompecabezas de Amor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/ee/dd/8beedd96-8bf1-4825-4725-092cbd500770/mzaf_13581068412806188186.plus.aac.p.m4a"
+ },
+ {
   "genre": "cumbia",
   "artist": "Gilda",
   "title": "No Me Arrepiento de Este Amor",
@@ -1457,5 +1619,539 @@ export const CATALOG = [
   "artist": "Américo",
   "title": "El Embrujo",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/00/a5/80/00a5800e-15f0-00c8-57f0-061b3fe8ff79/mzaf_1708977922483100630.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Gilda",
+  "title": "No Es Mi Despedida",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/4a/49/014a4969-a8db-25bc-1472-1eb5ba56e976/mzaf_6324837485831759427.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Néstor En Bloque",
+  "title": "Una Calle Nos Separa",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d3/a7/a3/d3a7a3c6-c4d5-5840-d77f-e565066c2169/mzaf_12355953471958051507.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Agapornis",
+  "title": "Te Extraño, Te Olvido, Te Amo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d4/f0/f1/d4f0f10a-a626-71c3-e6b9-3c99667cb5af/mzaf_5243169086767393292.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Los Lamas",
+  "title": "Dónde Estás Amor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6f/b1/65/6fb1650a-c969-ebee-20df-57987fb51036/mzaf_6004835437151672142.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Ke Personajes",
+  "title": "Como la Flor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/6c/13/ce6c134e-10d8-8547-e7a4-f0bdabd088dd/mzaf_3327141346926726022.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "La Sonora Dinamita",
+  "title": "Escándalo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1b/2f/2d/1b2f2d63-5c18-911a-fe5e-847cd6422039/mzaf_18405208139981942079.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Los Palmeras",
+  "title": "La Cola",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cf/b0/88/cfb0886c-bfad-fd4a-798c-49a46561d871/mzaf_3209252139311241868.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Damas Gratis",
+  "title": "El Humo de Mi Fasito",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/5f/27/395f27f4-4724-a805-8359-d1fe3332cd26/mzaf_16911217426976399148.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Leo Mattioli",
+  "title": "Después de Ti",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/74/eb/6874eb90-e062-237f-6882-945575a38478/mzaf_16910129296973700080.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Antonio Ríos",
+  "title": "Yo Me Estoy Enamorando",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/59/aa/23/59aa23fd-b308-dd6f-3a33-93217da15843/mzaf_16349237435686200977.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "La K'onga",
+  "title": "El Mismo Aire",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/30/18/88/30188827-1e61-d5ab-2bda-78a66aad37b6/mzaf_11844125864151120471.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Marama",
+  "title": "Nena",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/20/a5/c220a598-ec4c-0ab6-407a-53c511e56a1d/mzaf_934600004446269335.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Grupo Green",
+  "title": "Fue un Sueño",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/31/e2/9f/31e29f04-a19c-2431-4929-842ab97bbef0/mzaf_17815772703328344745.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Los Charros",
+  "title": "Amores Como el Nuestro",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/75/2b/cd752bd1-abb8-c183-0b5b-f72cc41569b0/mzaf_15234890513703902863.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Uriel Lozano",
+  "title": "Tenerte",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/99/37/94993789-625a-1fd2-a168-c2c7fd87e040/mzaf_13508613020665831907.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Q' Lokura",
+  "title": "Todavía Me Quiere",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/db/8b/64/db8b6496-74c0-3936-a039-123a170cfd20/mzaf_11563040017970350376.plus.aac.p.m4a"
+ },
+ {
+  "genre": "cumbia",
+  "artist": "Los Ángeles Azules",
+  "title": "20 Rosas",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/98/16/e9981610-f063-9fb6-ca90-16883645b3c6/mzaf_14901334450108719182.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Shakira",
+  "title": "Estoy Aquí",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e6/1a/e6/e61ae6dc-71a0-c343-5e2a-b674afe5a454/mzaf_6838942877118141285.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Shakira",
+  "title": "Ciega Sordomuda",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3a/18/63/3a1863ef-7849-d8ce-f7f3-b4dff44497d9/mzaf_15137099757104377555.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Shakira",
+  "title": "La Tortura",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/96/7e/3a/967e3ab1-b014-0875-e826-9adab6cf0fb6/mzaf_13987471668047515779.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Shakira",
+  "title": "Ojos Así",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/17/5e/53/175e5367-06d2-df43-cd85-f0ea8212523f/mzaf_17888099521690543091.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Shakira",
+  "title": "Chantaje",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ce/25/45/ce254583-d1ac-db76-c02e-a4ceeab5e2de/mzaf_7277323164917214654.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Shakira",
+  "title": "Te Felicito",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/dd/ef/71/ddef71e5-6112-4791-1d76-77d4b413bb47/mzaf_18040360802867676286.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Ricky Martin",
+  "title": "María",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c7/6e/0e/c76e0ee9-148f-978e-bc22-65aaafedf08c/mzaf_16776298525859973391.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Ricky Martin",
+  "title": "La Copa de la Vida",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c7/8f/de/c78fded4-47d5-1d67-6a2d-94856b76bdef/mzaf_12856886368774527871.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Ricky Martin",
+  "title": "Vuelve",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ba/df/c7/badfc740-6642-d843-1428-39dbb2cc1bcb/mzaf_9062245046215460176.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Juanes",
+  "title": "La Camisa Negra",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/84/de/46/84de46ef-f9f8-c6ad-fb6e-f6d5ca7571b7/mzaf_17789816509198950478.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Juanes",
+  "title": "A Dios le Pido",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/a6/31/c0a631e9-2699-0659-420f-b070cbd57986/mzaf_9234358422951205271.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Juanes",
+  "title": "Es Por Ti",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/21/41/ae/2141ae62-3273-fb78-d146-ebc409b81da0/mzaf_2002473520653017788.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Carlos Vives",
+  "title": "La Gota Fría",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/1c/64/251c64df-1fd9-824b-e0cf-43dd5c1a49c8/mzaf_9425335053053873695.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Carlos Vives",
+  "title": "Volví a Nacer",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/21/82/d9218211-5d71-3250-29e2-9954803ba04a/mzaf_6572342001455180300.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Carlos Vives",
+  "title": "Fruta Fresca",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9d/24/e1/9d24e184-3015-6cb0-1f8a-9ff1b2e2d199/mzaf_1955404524858083767.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Enrique Iglesias",
+  "title": "Bailando",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/f0/3d/32f03d6b-b4a9-a95c-8485-5382f3320ad5/mzaf_4845334402819508912.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Enrique Iglesias",
+  "title": "Experiencia Religiosa",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/63/ab/42/63ab422f-394c-7511-67d3-bf49c0fb3f5e/mzaf_3493085592046519743.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Enrique Iglesias",
+  "title": "Héroe",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4e/4f/cc/4e4fcc9f-cd00-1d25-4ec6-7e8a03a678e5/mzaf_13473816077629485196.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Luis Fonsi",
+  "title": "Despacito",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0d/cb/ec/0dcbec41-5e9e-bd09-7cdd-fdff44acdf78/mzaf_17345185466754008149.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Luis Fonsi",
+  "title": "No Me Doy Por Vencido",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/42/9b/08/429b08c4-20b2-225f-92fd-08428c6475d9/mzaf_10342486027022233580.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Alejandro Sanz",
+  "title": "Corazón Partío",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/82/70/a0/8270a04d-a979-49cf-7a72-bf33882481a1/mzaf_316092880046968071.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Alejandro Sanz",
+  "title": "Amiga Mía",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fb/01/ca/fb01caea-1773-d62c-bd9e-9ff58176d1f5/mzaf_15866672926985222465.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Alejandro Sanz",
+  "title": "Y Si Fuera Ella",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/0c/3c/fc0c3c41-4ebc-bf2e-c493-73ea726be8a3/mzaf_8584027846799972918.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Maná",
+  "title": "Oye Mi Amor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/28/a6/a0/28a6a0ad-56c5-4f05-7ad6-dd8462138c48/mzaf_17776676256968176158.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Maná",
+  "title": "Rayando el Sol",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/01/86/3f0186bb-c33c-2d9e-0438-0eebdb8ed03d/mzaf_13744697863124499124.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Maná",
+  "title": "Clavado en un Bar",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/73/21/14/732114c8-e61c-0be4-3c45-f7d6f867a2ea/mzaf_13715431900222570581.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Maná",
+  "title": "Labios Compartidos",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/37/ad/d2/37add219-5f37-e42b-2240-6d57d6639c92/mzaf_13929915549265598944.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Thalía",
+  "title": "Piel Morena",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a6/ce/6a/a6ce6ad1-32c3-29f9-2cfc-ea3b13ba442b/mzaf_11521349218108012368.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Thalía",
+  "title": "Amor a la Mexicana",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ba/fb/1d/bafb1da7-5b6f-13ea-482b-e71351360145/mzaf_2990945887725039804.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Chayanne",
+  "title": "Torero",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f1/de/e0/f1dee091-2f3c-262f-a16c-ab0fdbb6e6b1/mzaf_819356996339502348.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Chayanne",
+  "title": "Salomé",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ef/1c/18/ef1c18f6-fe9c-74a8-925e-bf894fcc1ef3/mzaf_5393365758740774093.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Chayanne",
+  "title": "Dejaría Todo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/21/55/8f215529-ea6a-d604-5742-c647f0ae2c86/mzaf_319648680003843676.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Juan Luis Guerra",
+  "title": "La Bilirrubina",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ef/74/52/ef745243-c6e2-e298-dbc4-a2c7086ac0d5/mzaf_8764463970642894599.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Juan Luis Guerra",
+  "title": "Burbujas de Amor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f9/0a/68/f90a68e8-1d7b-d740-0655-b8dbddd33501/mzaf_10935336450569528406.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Juan Luis Guerra",
+  "title": "Ojalá Que Llueva Café",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ca/d5/a3/cad5a37e-0447-d15b-5ae1-141c5a56dcf4/mzaf_17932619021071889002.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Julieta Venegas",
+  "title": "Me Voy",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7f/9e/6d/7f9e6dac-39e5-b517-f3af-581820d57aa1/mzaf_3096117638014918497.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Julieta Venegas",
+  "title": "Limón y Sal",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9a/eb/38/9aeb3838-9221-b333-c568-61a599ff681d/mzaf_15145623086394487951.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Julieta Venegas",
+  "title": "Andar Conmigo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2b/b5/e6/2bb5e6a9-9220-77fe-3e5b-a4f1e9758efa/mzaf_13956117157476340570.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Diego Torres",
+  "title": "Color Esperanza",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f6/c0/85/f6c08587-c0fc-b4a7-9290-8f38424ca416/mzaf_15622805892500932804.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Diego Torres",
+  "title": "Penélope",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/d8/3f/39d83f8c-46af-9898-6290-2f8706bc21f7/mzaf_18048992980057941216.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Diego Torres",
+  "title": "Sueños",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6f/03/1b/6f031b72-4d6e-f837-2b01-55ec7daba793/mzaf_14650541450787599790.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Axel",
+  "title": "Celebra la Vida",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/14/2b/e2/142be2ef-0302-c25e-64b3-cefc9e506c86/mzaf_2928482771683400574.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Abel Pintos",
+  "title": "Oncemil",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e3/2c/42/e32c424d-a47a-5248-6986-7416cee9ab6f/mzaf_16349679659367524854.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Abel Pintos",
+  "title": "Sin Principio Ni Final",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fc/3a/6f/fc3a6f60-96f8-126a-9127-08242426990f/mzaf_2325899210444907100.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Ricardo Arjona",
+  "title": "Historia de Taxi",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9f/74/42/9f744273-91c6-28a2-336e-890ca8d2e19a/mzaf_10010761382995607612.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Ricardo Arjona",
+  "title": "Mujeres",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/43/42/62/434262e7-8ab5-287c-483e-ec3b11f67ddf/mzaf_9901606721822881687.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Ricardo Arjona",
+  "title": "El Problema",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a8/c9/d0/a8c9d097-f4e5-e995-0d30-ed78776d0bc4/mzaf_17328544201894446088.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Sin Bandera",
+  "title": "Entra en Mi Vida",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/07/f5/66/07f566db-2e60-8511-9be6-f15a781f1cf4/mzaf_10254160480313001608.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Reik",
+  "title": "Yo Quisiera",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/40/8c/9f/408c9f9d-dfa7-38cd-c1fa-d8abcf90fd7e/mzaf_3421202170275651418.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Jesse & Joy",
+  "title": "Espacio Sideral",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fe/2e/84/fe2e8490-c5f9-a76b-492a-5edd56e4b1d9/mzaf_10099249101686437102.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Jesse & Joy",
+  "title": "¡Corre!",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d6/74/85/d67485fc-e784-d7e5-17a2-58b04ef5ef74/mzaf_17220573363866980874.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Paulina Rubio",
+  "title": "Ni Una Sola Palabra",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/61/15/91/61159144-5fd5-b5b2-47c1-e7cb888ffa0f/mzaf_16662924798327171183.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Paulina Rubio",
+  "title": "Mío",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/34/58/55/345855b6-d7d6-8b52-0527-3c74350f8c8d/mzaf_10187295459335608481.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Gloria Trevi",
+  "title": "Pelo Suelto",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cb/96/e8/cb96e89c-932a-3aca-49df-96237f2e12d7/mzaf_15256632292161674571.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Natalia Oreiro",
+  "title": "Cambio Dolor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e5/f0/51/e5f05116-5567-e70f-382d-fda11c69fd21/mzaf_9254370815938421568.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Natalia Oreiro",
+  "title": "Me Muero de Amor",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6c/a6/9e/6ca69ece-31d9-1fba-4c20-5554b2e9aca8/mzaf_7871960558574531704.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Camila",
+  "title": "Todo Cambió",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ef/fc/03/effc033b-263e-1339-ea1d-86daae7e4c71/mzaf_17675613835052405125.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Sebastián Yatra",
+  "title": "Traicionera",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/07/8d/8b078df0-0b85-52ce-bb89-6ee9783ff340/mzaf_8784743862075976437.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Camilo",
+  "title": "Vida de Rico",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/3b/35/d93b3510-4958-ce9c-963d-c1a15f6bb941/mzaf_10423236369837597220.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Morat",
+  "title": "Cómo Te Atreves",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/13/66/b0136675-2693-d2d6-4159-34183c1bab62/mzaf_15644982957738871328.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Carlos Baute",
+  "title": "Colgando en Tus Manos",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a1/5a/e7/a15ae7c0-0b38-bd1c-98fd-33e2ffd262e4/mzaf_13219313333179696513.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "La Oreja de Van Gogh",
+  "title": "La Playa",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1d/c8/da/1dc8da08-7424-20b6-e11a-5fea024ffb31/mzaf_3642712639978869376.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "La Oreja de Van Gogh",
+  "title": "Rosas",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/41/05/a0/4105a0b3-5473-e2cc-faed-5c983f7e0846/mzaf_7129242337216914850.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "RBD",
+  "title": "Rebelde",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/77/78/58777871-2328-3fda-f019-bcffa54fd124/mzaf_3042485085348055469.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Marc Anthony",
+  "title": "Vivir Mi Vida",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/10/fd/bf/10fdbf20-d17d-a8a2-6058-c1ef9f221068/mzaf_9159790581568803090.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Lali",
+  "title": "Mil Años Luz",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/17/da/6d/17da6d52-ef34-6f63-7c09-9237e3b5c971/mzaf_6042148378264929406.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Kudai",
+  "title": "Sin Despertar",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/54/4d/e3/544de31f-da31-f60c-6dca-67355baacad9/mzaf_1774243143748080564.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Luis Miguel",
+  "title": "La Incondicional",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a2/d6/5e/a2d65ea2-9499-a8a1-42cf-eb8936541f06/mzaf_9722074846622436262.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Luis Miguel",
+  "title": "Ahora Te Puedes Marchar",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/88/90/58/88905885-4c88-b640-ac23-a233e7a8aaf1/mzaf_3278162798284304367.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Franco De Vita",
+  "title": "Te Amo",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a8/6d/09/a86d09b3-3544-9713-34c0-74bc3d408cbd/mzaf_9054487660671371374.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Laura Pausini",
+  "title": "La Soledad",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c5/b6/77/c5b677e0-cb1c-8aa1-b737-655d4179ad1a/mzaf_10206774468867938005.plus.aac.p.m4a"
+ },
+ {
+  "genre": "pop",
+  "artist": "Elvis Crespo",
+  "title": "Suavemente",
+  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/26/81/e9/2681e924-ffbe-4c44-6138-e71a6e1f5381/mzaf_12647945363787259301.plus.aac.p.m4a"
  }
 ];

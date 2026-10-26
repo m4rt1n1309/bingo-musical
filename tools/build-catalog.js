@@ -1,6 +1,7 @@
 // Arma js/catalog.js a partir de songs.js, buscando el fragmento de cada tema en iTunes.
 // Uso: npm run catalogo   (después de agregar o cambiar temas en songs.js)
 // Los temas ya encontrados quedan guardados en previews-cache.json y no se vuelven a buscar.
+// Los temas anotados en excluidos.json (se eligen con npm run temas) no entran al catálogo.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -10,6 +11,7 @@ import SONGS from "../songs.js";
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CACHE_FILE = path.join(ROOT, "previews-cache.json");
 const OUT_FILE = path.join(ROOT, "js", "catalog.js");
+const EXCLUDED_FILE = path.join(ROOT, "excluidos.json");
 
 const norm = (s) =>
   s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
@@ -28,7 +30,8 @@ const pickBest = (song, results) => {
     const artists = (r.artistName || "").split(/\s*(?:&|,|\bfeat\.?|\bft\.?|\sx\s)\s*/i).map(norm);
     const title = norm(r.trackName || "");
     let score = 0;
-    if (artists[0] === wantArtist) score += 4;
+    // ...salvo que el "&" sea parte del nombre, como en Jesse & Joy
+    if (artists[0] === wantArtist || norm(r.artistName || "") === wantArtist) score += 4;
     else if (artists.includes(wantArtist)) score += 3;
     if (title === wantTitle) score += 4;
     else if (title.startsWith(wantTitle)) score += 3;
@@ -63,11 +66,15 @@ const findPreview = async (song) => {
 let cache = {};
 try { cache = JSON.parse(fs.readFileSync(CACHE_FILE, "utf8")); } catch { /* sin caché todavía */ }
 
+let excluded = new Set();
+try { excluded = new Set(JSON.parse(fs.readFileSync(EXCLUDED_FILE, "utf8"))); } catch { /* no hay temas sacados */ }
+
 const catalog = [];
 const missing = [];
 for (const [genre, list] of Object.entries(SONGS)) {
   for (const song of list) {
     const key = songKey(song);
+    if (excluded.has(key)) continue;
     if (!cache[key]) {
       process.stdout.write(`Buscando ${key}… `);
       const info = await findPreview(song);
@@ -87,5 +94,5 @@ fs.writeFileSync(
     `export const CATALOG = ${JSON.stringify(catalog, null, 1)};\n`,
 );
 
-console.log(`\n${catalog.length} temas en el catálogo.`);
+console.log(`\n${catalog.length} temas en el catálogo${excluded.size ? ` (${excluded.size} sacados con npm run temas)` : ""}.`);
 if (missing.length) console.log(`Sin fragmento (no van a aparecer en el juego):\n  ${missing.join("\n  ")}`);

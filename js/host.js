@@ -6,7 +6,7 @@ import {
 import { createSyncAudio } from "./audio.js";
 import { $, escapeHtml, store, show, salaFromUrl, joinUrlFor, wantedSong, visibleHistory, buildFeed, renderChat, bindChatForm, bindChatView } from "./ui.js";
 
-const GENRE_NAMES = { rock: "Rock nacional", cumbia: "Cumbia" };
+const GENRE_NAMES = { rock: "Rock nacional", cumbia: "Cumbia", pop: "Pop latino" };
 const sala = salaFromUrl();
 const joinUrl = joinUrlFor(sala);
 
