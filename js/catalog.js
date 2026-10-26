@@ -464,12 +464,6 @@ export const CATALOG = [
  },
  {
   "genre": "rock",
-  "artist": "Babasónicos",
-  "title": "Yegua",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/51/b6/34/51b63420-a8ab-fbcd-2fb2-f793f13ddde6/mzaf_7560974201440647411.plus.aac.p.m4a"
- },
- {
-  "genre": "rock",
   "artist": "Miranda!",
   "title": "Yo Te Diré",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/27/ea/6c/27ea6cc4-fc30-696c-ecc3-0ca1b775e224/mzaf_10494941030286515848.plus.aac.p.m4a"
@@ -1377,12 +1371,6 @@ export const CATALOG = [
  {
   "genre": "cumbia",
   "artist": "La Sonora Dinamita",
-  "title": "Mi Cucu",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/af/da/2a/afda2a58-5910-556d-db1a-808be39fbde9/mzaf_1311412034415039706.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
-  "artist": "La Sonora Dinamita",
   "title": "Que Nadie Sepa Mi Sufrir",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/dc/1f/a5/dc1fa53d-e85c-1999-ff12-aadcc9007dd8/mzaf_10753051485517263588.plus.aac.p.m4a"
  },
@@ -1433,12 +1421,6 @@ export const CATALOG = [
   "artist": "La Sonora Dinamita",
   "title": "Se Me Perdió la Cadenita",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cd/30/5b/cd305b81-89c6-f029-0b20-789d6165d9f3/mzaf_8035473102153141628.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
-  "artist": "Celso Piña",
-  "title": "Cumbia Sobre el Río",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8e/c1/a0/8ec1a046-d783-6511-8b81-d092dc9583d5/mzaf_14299876869714857858.plus.aac.p.m4a"
  },
  {
   "genre": "cumbia",
@@ -1556,12 +1538,6 @@ export const CATALOG = [
  },
  {
   "genre": "cumbia",
-  "artist": "Grupo 5",
-  "title": "Motor y Motivo",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3b/ab/73/3bab733c-e2f8-2dd6-4b3b-6baf3e8a4b05/mzaf_5217169978713708393.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
   "artist": "Alcides",
   "title": "Violeta",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/03/25/46/03254691-60f7-cff3-735e-c34609b869cc/mzaf_249082033667276069.plus.aac.p.m4a"
@@ -1580,21 +1556,9 @@ export const CATALOG = [
  },
  {
   "genre": "cumbia",
-  "artist": "La Sonora Dinamita",
-  "title": "El Africano",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/20/3a/41/203a413a-c407-5be2-ddba-1bdff08405b1/mzaf_10754508264338965278.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
   "artist": "Los Mirlos",
   "title": "Sonido Amazónico",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/db/a1/6f/dba16f3a-b9bb-bcce-0296-3e49aa7afaea/mzaf_12883288602702000883.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
-  "artist": "Celso Piña",
-  "title": "Aunque No Sea Conmigo",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a8/63/9a/a8639aad-b8a5-7837-3878-be1aced96a58/mzaf_16053438830095387038.plus.aac.p.m4a"
  },
  {
   "genre": "cumbia",
@@ -1640,21 +1604,9 @@ export const CATALOG = [
  },
  {
   "genre": "cumbia",
-  "artist": "Los Lamas",
-  "title": "Dónde Estás Amor",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6f/b1/65/6fb1650a-c969-ebee-20df-57987fb51036/mzaf_6004835437151672142.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
   "artist": "Ke Personajes",
   "title": "Como la Flor",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/6c/13/ce6c134e-10d8-8547-e7a4-f0bdabd088dd/mzaf_3327141346926726022.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
-  "artist": "La Sonora Dinamita",
-  "title": "Escándalo",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1b/2f/2d/1b2f2d63-5c18-911a-fe5e-847cd6422039/mzaf_18405208139981942079.plus.aac.p.m4a"
  },
  {
   "genre": "cumbia",
@@ -1703,12 +1655,6 @@ export const CATALOG = [
   "artist": "Los Charros",
   "title": "Amores Como el Nuestro",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/75/2b/cd752bd1-abb8-c183-0b5b-f72cc41569b0/mzaf_15234890513703902863.plus.aac.p.m4a"
- },
- {
-  "genre": "cumbia",
-  "artist": "Uriel Lozano",
-  "title": "Tenerte",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/99/37/94993789-625a-1fd2-a168-c2c7fd87e040/mzaf_13508613020665831907.plus.aac.p.m4a"
  },
  {
   "genre": "cumbia",
@@ -1799,12 +1745,6 @@ export const CATALOG = [
   "artist": "Carlos Vives",
   "title": "La Gota Fría",
   "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/1c/64/251c64df-1fd9-824b-e0cf-43dd5c1a49c8/mzaf_9425335053053873695.plus.aac.p.m4a"
- },
- {
-  "genre": "pop",
-  "artist": "Carlos Vives",
-  "title": "Volví a Nacer",
-  "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/21/82/d9218211-5d71-3250-29e2-9954803ba04a/mzaf_6572342001455180300.plus.aac.p.m4a"
  },
  {
   "genre": "pop",
